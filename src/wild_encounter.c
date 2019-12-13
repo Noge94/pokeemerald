@@ -3,7 +3,7 @@
 #include "pokemon.h"
 #include "metatile_behavior.h"
 #include "fieldmap.h"
-#include "evolution.h"
+//#include "evolution.h"
 #include "random.h"
 #include "field_player_avatar.h"
 #include "event_data.h"
@@ -23,6 +23,197 @@
 #include "constants/layouts.h"
 #include "constants/maps.h"
 #include "constants/species.h"
+
+
+
+const u16 gMinWildLevelTable[NUM_SPECIES] =
+{
+    [SPECIES_IVYSAUR]       = 16,
+    [SPECIES_VENUSAUR]      = 32,
+    [SPECIES_CHARMELEON]    = 16,
+    [SPECIES_CHARIZARD]     = 36,
+    [SPECIES_WARTORTLE]     = 16,
+    [SPECIES_BLASTOISE]     = 36,
+    [SPECIES_METAPOD]       = 7,
+    [SPECIES_BUTTERFREE]    = 10,
+    [SPECIES_KAKUNA]        = 7,
+    [SPECIES_BEEDRILL]      = 10,
+    [SPECIES_PIDGEOTTO]     = 18,
+    [SPECIES_PIDGEOT]       = 36,
+    [SPECIES_RATICATE]      = 20,
+    [SPECIES_FEAROW]        = 20,
+    [SPECIES_ARBOK]         = 22,
+    [SPECIES_RAICHU]        = 25,
+    [SPECIES_SANDSLASH]     = 22,
+    [SPECIES_NIDORINA]      = 16,
+    [SPECIES_NIDOQUEEN]     = 35,
+    [SPECIES_NIDORINO]      = 16,
+    [SPECIES_NIDOKING]      = 35,
+    [SPECIES_CLEFABLE]      = 35,
+    [SPECIES_NINETALES]     = 25,
+    [SPECIES_WIGGLYTUFF]    = 35,
+    [SPECIES_GOLBAT]        = 22,
+    [SPECIES_CROBAT]        = 50,
+    [SPECIES_GLOOM]         = 21,
+    [SPECIES_VILEPLUME]     = 30,
+    [SPECIES_BELLOSSOM]     = 30,
+    [SPECIES_PARASECT]      = 24,
+    [SPECIES_VENOMOTH]      = 31,
+    [SPECIES_DUGTRIO]       = 26,
+    [SPECIES_PERSIAN]       = 28,
+    [SPECIES_GOLDUCK]       = 33,
+    [SPECIES_PRIMEAPE]      = 28,
+    [SPECIES_ARCANINE]      = 25,
+    [SPECIES_POLIWHIRL]     = 25,
+    [SPECIES_POLIWRATH]     = 25,
+    [SPECIES_POLITOED]      = 40,
+    [SPECIES_KADABRA]       = 16,
+    [SPECIES_ALAKAZAM]      = 0,
+    [SPECIES_MACHOKE]       = 28,
+    [SPECIES_MACHAMP]       = 0,
+    [SPECIES_WEEPINBELL]    = 21,
+    [SPECIES_VICTREEBEL]    = 30,
+    [SPECIES_TENTACRUEL]    = 30,
+    [SPECIES_GRAVELER]      = 25,
+    [SPECIES_GOLEM]         = 0,
+    [SPECIES_RAPIDASH]      = 40,
+    [SPECIES_SLOWBRO]       = 37,
+    [SPECIES_SLOWKING]      = 40,
+    [SPECIES_MAGNETON]      = 30,
+    [SPECIES_DODRIO]        = 31,
+    [SPECIES_DEWGONG]       = 34,
+    [SPECIES_MUK]           = 38,
+    [SPECIES_CLOYSTER]      = 25,
+    [SPECIES_HAUNTER]       = 25,
+    [SPECIES_GENGAR]        = 0,
+    [SPECIES_STEELIX]       = 40,
+    [SPECIES_HYPNO]         = 26,
+    [SPECIES_KINGLER]       = 28,
+    [SPECIES_ELECTRODE]     = 30,
+    [SPECIES_EXEGGUTOR]     = 30,
+    [SPECIES_MAROWAK]       = 28,
+    [SPECIES_WEEZING]       = 35,
+    [SPECIES_RHYDON]        = 42,
+    [SPECIES_BLISSEY]       = 0,
+    [SPECIES_SEADRA]        = 32,
+    [SPECIES_KINGDRA]       = 42,
+    [SPECIES_SEAKING]       = 33,
+    [SPECIES_STARMIE]       = 25,
+    [SPECIES_SCIZOR]        = 40,
+    [SPECIES_GYARADOS]      = 20,
+    [SPECIES_JOLTEON]       = 25,
+    [SPECIES_VAPOREON]      = 25,
+    [SPECIES_FLAREON]       = 25,
+    [SPECIES_ESPEON]        = 35,
+    [SPECIES_UMBREON]       = 35,
+    [SPECIES_PORYGON2]      = 40,
+    [SPECIES_OMASTAR]       = 40,
+    [SPECIES_KABUTOPS]      = 40,
+    [SPECIES_DRAGONAIR]     = 30,
+    [SPECIES_DRAGONITE]     = 55,
+    [SPECIES_BAYLEEF]       = 16,
+    [SPECIES_MEGANIUM]      = 32,
+    [SPECIES_QUILAVA]       = 14,
+    [SPECIES_TYPHLOSION]    = 36,
+    [SPECIES_CROCONAW]      = 18,
+    [SPECIES_FERALIGATR]    = 30,
+    [SPECIES_FURRET]        = 15,
+    [SPECIES_NOCTOWL]       = 20,
+    [SPECIES_LEDIAN]        = 18,
+    [SPECIES_ARIADOS]       = 22,
+    [SPECIES_LANTURN]       = 27,
+    [SPECIES_PIKACHU]       = 0,
+    [SPECIES_CLEFAIRY]      = 0,
+    [SPECIES_JIGGLYPUFF]    = 0,
+    [SPECIES_TOGETIC]       = 0,
+    [SPECIES_XATU]          = 25,
+    [SPECIES_FLAAFFY]       = 15,
+    [SPECIES_AMPHAROS]      = 30,
+    [SPECIES_AZUMARILL]     = 18,
+    [SPECIES_SKIPLOOM]      = 18,
+    [SPECIES_JUMPLUFF]      = 27,
+    [SPECIES_SUNFLORA]      = 30,
+    [SPECIES_QUAGSIRE]      = 20,
+    [SPECIES_FORRETRESS]    = 31,
+    [SPECIES_GRANBULL]      = 23,
+    [SPECIES_URSARING]      = 30,
+    [SPECIES_MAGCARGO]      = 38,
+    [SPECIES_PILOSWINE]     = 33,
+    [SPECIES_OCTILLERY]     = 25,
+    [SPECIES_HOUNDOOM]      = 24,
+    [SPECIES_DONPHAN]       = 25,
+    [SPECIES_HITMONCHAN]    = 20,
+    [SPECIES_HITMONLEE]     = 20,
+    [SPECIES_HITMONTOP]     = 20,
+    [SPECIES_JYNX]          = 30,
+    [SPECIES_ELECTABUZZ]    = 30,
+    [SPECIES_MAGMAR]        = 30,
+    [SPECIES_PUPITAR]       = 30,
+    [SPECIES_TYRANITAR]     = 55,
+    [SPECIES_GROVYLE]       = 16,
+    [SPECIES_SCEPTILE]      = 36,
+    [SPECIES_COMBUSKEN]     = 16,
+    [SPECIES_BLAZIKEN]      = 36,
+    [SPECIES_MARSHTOMP]     = 16,
+    [SPECIES_SWAMPERT]      = 36,
+    [SPECIES_MIGHTYENA]     = 18,
+    [SPECIES_LINOONE]       = 20,
+    [SPECIES_SILCOON]       = 7,
+    [SPECIES_CASCOON]       = 7,
+    [SPECIES_BEAUTIFLY]     = 10,
+    [SPECIES_DUSTOX]        = 10,
+    [SPECIES_LOMBRE]        = 14,
+    [SPECIES_LUDICOLO]      = 25,
+    [SPECIES_NUZLEAF]       = 14,
+    [SPECIES_SHIFTRY]       = 30,
+    [SPECIES_NINJASK]       = 20,
+    [SPECIES_SHEDINJA]      = 40,
+    [SPECIES_SWELLOW]       = 22,
+    [SPECIES_BRELOOM]       = 23,
+    [SPECIES_PELIPPER]      = 25,
+    [SPECIES_MASQUERAIN]    = 22,
+    [SPECIES_WAILORD]       = 40,
+    [SPECIES_DELCATTY]      = 35,
+    [SPECIES_CLAYDOL]       = 36,
+    [SPECIES_WHISCASH]      = 30,
+    [SPECIES_CRAWDAUNT]     = 30,
+    [SPECIES_MILOTIC]       = 170,
+    [SPECIES_SHARPEDO]      = 30,
+    [SPECIES_VIBRAVA]       = 35,
+    [SPECIES_FLYGON]        = 45,
+    [SPECIES_HARIYAMA]      = 24,
+    [SPECIES_MANECTRIC]     = 26,
+    [SPECIES_CAMERUPT]      = 33,
+    [SPECIES_SEALEO]        = 32,
+    [SPECIES_WALREIN]       = 44,
+    [SPECIES_CACTURNE]      = 32,
+    [SPECIES_GLALIE]        = 42,
+    [SPECIES_MARILL]        = 0,
+    [SPECIES_GRUMPIG]       = 32,
+    [SPECIES_MEDICHAM]      = 37,
+    [SPECIES_ALTARIA]       = 35,
+    [SPECIES_WOBBUFFET]     = 15,
+    [SPECIES_DUSCLOPS]      = 37,
+    [SPECIES_VIGOROTH]      = 18,
+    [SPECIES_SLAKING]       = 36,
+    [SPECIES_SWALOT]        = 26,
+    [SPECIES_LOUDRED]       = 20,
+    [SPECIES_EXPLOUD]       = 40,
+    [SPECIES_HUNTAIL]       = 44,
+    [SPECIES_GOREBYSS]      = 44,
+    [SPECIES_BANETTE]       = 37,
+    [SPECIES_LAIRON]        = 32,
+    [SPECIES_AGGRON]        = 42,
+    [SPECIES_CRADILY]       = 40,
+    [SPECIES_ARMALDO]       = 40,
+    [SPECIES_KIRLIA]        = 20,
+    [SPECIES_GARDEVOIR]     = 30,
+    [SPECIES_SHELGON]       = 30,
+    [SPECIES_SALAMENCE]     = 50,
+    [SPECIES_METANG]        = 20,
+    [SPECIES_METAGROSS]     = 45,
+};
+
 
 extern const u8 EventScript_RepelWoreOff[];
 
@@ -347,18 +538,22 @@ static u8 PickWildMonNature(void)
     return Random() % 25;
 }
 
-static void CreateWildMon(u16 species, u8 level)
+static u16 trainerId(){
+    return (gSaveBlock2Ptr->playerTrainerId[0]) | (gSaveBlock2Ptr->playerTrainerId[1] << 8);
+}
+
+static void CreateWildMon(u16 species, u8 level, u8 wildMonIndex)
 {
 
     bool32 checkCuteCharm;
 
     // Noge liandola
-  //  species = (species + gSaveBlock2Ptr->playerTrainerId[0]) % 359; // % NUM_SPECIES
-  //  while(level < gMinWildLevelTable[species]){
- //       species = (species-1) % 359;
- //   }
-  //  species = 1;
-  //  printf("Fighting wild pokemon");
+    species = (species*wildMonIndex+1 + trainerId()) % NUM_SPECIES;
+    while(level < gMinWildLevelTable[species]){
+        species = (species-1) % NUM_SPECIES;
+    }
+   // species = 1;
+    //printf("Fighting wild pokemon");
 
 
     ZeroEnemyPartyMons();
@@ -438,7 +633,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex);
     return TRUE;
 }
 
@@ -447,7 +642,7 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
     u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
     u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex);
     return wildMonInfo->wildPokemon[wildMonIndex].species;
 }
 
@@ -458,7 +653,7 @@ static bool8 SetUpMassOutbreakEncounter(u8 flags)
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(gSaveBlock1Ptr->outbreakPokemonLevel))
         return FALSE;
 
-    CreateWildMon(gSaveBlock1Ptr->outbreakPokemonSpecies, gSaveBlock1Ptr->outbreakPokemonLevel);
+    CreateWildMon(gSaveBlock1Ptr->outbreakPokemonSpecies, gSaveBlock1Ptr->outbreakPokemonLevel, -1); //is this legendary battle?
     for (i = 0; i < 4; i++)
         SetMonMoveSlot(&gEnemyParty[0], gSaveBlock1Ptr->outbreakPokemonMoves[i], i);
 
@@ -770,7 +965,7 @@ void FishingWildEncounter(u8 rod)
         u8 level = ChooseWildMonLevel(&gWildFeebasRoute119Data);
 
         species = gWildFeebasRoute119Data.species;
-        CreateWildMon(species, level);
+        CreateWildMon(species, level, -1);
     }
     else
     {
@@ -942,3 +1137,4 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
     if (GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM) == ITEM_CLEANSE_TAG)
         *encRate = *encRate * 2 / 3;
 }
+
