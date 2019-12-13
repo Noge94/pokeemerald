@@ -3,6 +3,7 @@
 #include "pokemon.h"
 #include "metatile_behavior.h"
 #include "fieldmap.h"
+#include "evolution.h"
 #include "random.h"
 #include "field_player_avatar.h"
 #include "event_data.h"
@@ -348,7 +349,17 @@ static u8 PickWildMonNature(void)
 
 static void CreateWildMon(u16 species, u8 level)
 {
+
     bool32 checkCuteCharm;
+
+    // Noge liandola
+  //  species = (species + gSaveBlock2Ptr->playerTrainerId[0]) % 359; // % NUM_SPECIES
+  //  while(level < gMinWildLevelTable[species]){
+ //       species = (species-1) % 359;
+ //   }
+  //  species = 1;
+  //  printf("Fighting wild pokemon");
+
 
     ZeroEnemyPartyMons();
     checkCuteCharm = TRUE;

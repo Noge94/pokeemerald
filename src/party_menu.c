@@ -1286,6 +1286,7 @@ static void HandleChooseMonSelection(u8 taskId, s8 *slotPtr)
         case PARTY_ACTION_ABILITY_PREVENTS - 3:
         case PARTY_ACTION_SWITCHING - 3:
             PlaySE(SE_SELECT);
+            PlaySE(SE_BOO);
             Task_TryCreateSelectionWindow(taskId);
             break;
         }
@@ -2685,6 +2686,7 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
             break;
         case MENU_B_PRESSED:
             PlaySE(SE_SELECT);
+            PlaySE(SE_BOO);
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
             sCursorOptions[sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1]].func(taskId);
             break;
@@ -3804,8 +3806,15 @@ static void DisplayCantUseSurfMessage(void)
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_SURF_HERE);
 }
 
+static int TargetPokemonIsDead(void)
+{
+    return TRUE;
+}
+
 static bool8 SetUpFieldMove_Fly(void)
 {
+    if (TargetPokemonIsDead() == TRUE)
+        return FALSE;
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
         return TRUE;
     else
@@ -4370,8 +4379,10 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
     if (canHeal == TRUE)
     {
-        if (hp == 0)
+        if (hp == 0){
             AnimatePartySlot(gPartyMenu.slotId, 1);
+            return;
+        }
         PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_DisplayHPRestoredMessage);
         ResetHPTaskData(taskId, 0, hp);
         return;
