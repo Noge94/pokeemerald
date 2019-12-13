@@ -822,7 +822,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_HYPER_BEAM] =
     {
         .effect = EFFECT_RECHARGE,
-        .power = 150,
+        .power = 10,
         .type = TYPE_NORMAL,
         .accuracy = 90,
         .pp = 5,
@@ -4610,6 +4610,19 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .accuracy = 90,
         .pp = 5,
         .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGSROCK_AFFECTED,
+    },
+
+    [MOVE_SUPER_STEVE_ATTACK] =
+    {
+        .effect = EFFECT_OHKO,
+        .power = 150,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 90,
+        .pp = 1,
+        .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGSROCK_AFFECTED,

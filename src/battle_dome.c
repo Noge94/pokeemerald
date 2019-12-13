@@ -475,6 +475,7 @@ static const u8 sMovePointsForDomeTrainers[MOVES_COUNT][DOME_TOURNAMENT_TRAINERS
     [MOVE_WATER_PULSE] = {0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
     [MOVE_DOOM_DESIRE] = {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0},
     [MOVE_PSYCHO_BOOST] = {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1},
+    [MOVE_SUPER_STEVE_ATTACK] = {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1},
 };
 
 static const u8 gUnknown_0860C988[][DOME_TOURNAMENT_TRAINERS_COUNT] =

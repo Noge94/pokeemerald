@@ -370,6 +370,7 @@ gBattleAnims_Moves::
 	.4byte Move_WATER_PULSE
 	.4byte Move_DOOM_DESIRE
 	.4byte Move_PSYCHO_BOOST
+	.4byte Move_SUPER_STEVE_ATTACK
 	.4byte Move_COUNT @ cannot be reached, because last move is Psycho Boost
 
 	.align 2
@@ -9544,6 +9545,9 @@ Move_PSYCHO_BOOST:
 	blendoff
 	call UnsetPsychicBackground
 	end
+
+Move_SUPER_STEVE_ATTACK:
+	goto Move_DRAGON_BREATH
 
 Move_KNOCK_OFF:
 	loadspritegfx ANIM_TAG_SLAM_HIT_2
