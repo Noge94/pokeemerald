@@ -4849,6 +4849,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         break;
                     case 2:
                         // revive
+                        //make it not revive
                         if (r10 & 0x10)
                         {
                             if (GetMonData(mon, MON_DATA_HP, NULL) != 0)
@@ -4881,6 +4882,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 break;
                             }
                         }
+
+                        //TODO: make it not revive
+
                         dataUnsigned = itemEffect[var_3C++];
                         switch (dataUnsigned)
                         {

@@ -1194,7 +1194,9 @@ static void Task_PrepareToGiveExpWithExpBar(u8 taskId)
     exp -= currLvlExp;
     expToNextLvl = gExperienceTables[gBaseStats[species].growthRate][level + 1] - currLvlExp;
     SetBattleBarStruct(battlerId, gHealthboxSpriteIds[battlerId], expToNextLvl, exp, -gainedExp);
-    PlaySE(SE_EXP);
+    if(gainedExp!=0){
+        PlaySE(SE_EXP);
+    }
     gTasks[taskId].func = sub_8059400;
 }
 
