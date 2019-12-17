@@ -1,6 +1,6 @@
 const u32 *const gItemIconTable[][2] =
 {
-    [ITEM_NONE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_NONE] = {gItemIcon_PokeBall, gItemIconPalette_LuxuryBall},
     // Pokeballs
     [ITEM_MASTER_BALL] = {gItemIcon_MasterBall, gItemIconPalette_MasterBall},
     [ITEM_ULTRA_BALL] = {gItemIcon_UltraBall, gItemIconPalette_UltraBall},

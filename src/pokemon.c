@@ -2841,6 +2841,7 @@ void CalculateMonStats(struct Pokemon *mon)
 
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
 {
+    u16 pokeball;
     u32 value = 0;
     dest->box = *src;
     SetMonData(dest, MON_DATA_STATUS, &value);
@@ -2849,6 +2850,23 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
     value = 255;
     SetMonData(dest, MON_DATA_MAIL, &value);
     CalculateMonStats(dest);
+    pokeball = GetMonData(dest, MON_DATA_POKEBALL);
+    value = 0;
+    if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == ITEM_PREMIER_BALL){
+        SetMonData(dest, MON_DATA_HP, &value);
+    }
+    if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == 12){
+        SetMonData(dest, MON_DATA_HP, &value);
+    }
+    if(pokeball == 12){
+        SetMonData(dest, MON_DATA_HP, &value);
+    }
+    value = 1;
+    if(pokeball == ITEM_ULTRA_BALL){
+        SetMonData(dest, MON_DATA_HP, &value);
+    }
+    value = 2;
+    SetMonData(dest, MON_DATA_HP, &value);
 }
 
 u8 GetLevelFromMonExp(struct Pokemon *mon)

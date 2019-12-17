@@ -2181,7 +2181,7 @@ void sub_80BD28C(u8 x, u8 y, u16 unused)
 static void CreateInitialPokemonSprites(u16 selectedMon, u16 b)
 {
     u8 i;
-    u16 unk;
+    u16 monIndex;
     u8 spriteId;
 
     gPaletteFade.bufferTransferDisabled = TRUE;
@@ -2190,26 +2190,26 @@ static void CreateInitialPokemonSprites(u16 selectedMon, u16 b)
         sPokedexView->unk61E[i] = 0xFFFF;
     sPokedexView->selectedMonSpriteId = 0xFFFF;
 
-    unk = GetPokemonSpriteToDisplay(selectedMon - 1);
-    if (unk != 0xFFFF)
+    monIndex = GetPokemonSpriteToDisplay(selectedMon - 1);
+    if (monIndex != 0xFFFF)
     {
-        spriteId = sub_80BDACC(unk, 0x60, 0x50);
+        spriteId = sub_80BDACC(monIndex, 0x60, 0x50);
         gSprites[spriteId].callback = sub_80BE4E0;
         gSprites[spriteId].data[5] = -32;
     }
 
-    unk = GetPokemonSpriteToDisplay(selectedMon);
-    if (unk != 0xFFFF)
+    monIndex = GetPokemonSpriteToDisplay(selectedMon);
+    if (monIndex != 0xFFFF)
     {
-        spriteId = sub_80BDACC(unk, 0x60, 0x50);
+        spriteId = sub_80BDACC(monIndex, 0x60, 0x50);
         gSprites[spriteId].callback = sub_80BE4E0;
         gSprites[spriteId].data[5] = 0;
     }
 
-    unk = GetPokemonSpriteToDisplay(selectedMon + 1);
-    if (unk != 0xFFFF)
+    monIndex = GetPokemonSpriteToDisplay(selectedMon + 1);
+    if (monIndex != 0xFFFF)
     {
-        spriteId = sub_80BDACC(unk, 0x60, 0x50);
+        spriteId = sub_80BDACC(monIndex, 0x60, 0x50);
         gSprites[spriteId].callback = sub_80BE4E0;
         gSprites[spriteId].data[5] = 32;
     }
@@ -4649,7 +4649,7 @@ u32 sub_80C0E68(u16 a)
 u16 CreateMonSpriteFromNationalDexNumber(u16 nationalNum, s16 x, s16 y, u16 paletteSlot)
 {
     nationalNum = NationalPokedexNumToSpecies(nationalNum);
-    return CreateMonPicSprite_HandleDeoxys(nationalNum, 8, sub_80C0E68(nationalNum), TRUE, x, y, paletteSlot, 0xFFFF);
+    return CreateMonPicSprite_HandleDeoxys(nationalNum, SHINY_ODDS, sub_80C0E68(nationalNum), TRUE, x, y, paletteSlot, 0xFFFF);
 }
 
 u16 sub_80C0EF8(u16 species, s16 x, s16 y, s8 paletteSlot)

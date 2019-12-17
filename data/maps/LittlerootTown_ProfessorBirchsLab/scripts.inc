@@ -586,6 +586,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex:: @ 81FA3AC
 	setflag FLAG_SYS_POKEDEX_GET
 	special sub_81AFDA0  @ sets flags that are never read
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	special EnableNationalPokedex
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	return
 
