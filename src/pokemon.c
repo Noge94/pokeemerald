@@ -4868,8 +4868,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         retVal = FALSE;
                         break;
                     case 2:
-                        // revive
-                        //make it not revive
+                        // revive / heal hp
                         if (r10 & 0x10)
                         {
                             if (GetMonData(mon, MON_DATA_HP, NULL) != 0)
@@ -4903,24 +4902,23 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             }
                         }
 
-                        //TODO: make it not revive
-
                         dataUnsigned = itemEffect[var_3C++];
                         switch (dataUnsigned)
                         {
-                        case 0xFF:
-                            dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) - GetMonData(mon, MON_DATA_HP, NULL);
-                            break;
-                        case 0xFE:
-                            dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) / 2;
-                            if (dataUnsigned == 0)
-                                dataUnsigned = 1;
-                            break;
-                        case 0xFD:
-                            dataUnsigned = gBattleScripting.field_23;
-                            break;
+                            case 0xFF:
+                                dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) - GetMonData(mon, MON_DATA_HP, NULL);
+                                break;
+                            case 0xFE:
+                                dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) / 2;
+                                if (dataUnsigned == 0)
+                                    dataUnsigned = 1;
+                                break;
+                            case 0xFD:
+                                dataUnsigned = gBattleScripting.field_23;
+                                break;
                         }
-                        if (GetMonData(mon, MON_DATA_MAX_HP, NULL) != GetMonData(mon, MON_DATA_HP, NULL))
+                        if (GetMonData(mon, MON_DATA_MAX_HP, NULL) != GetMonData(mon, MON_DATA_HP, NULL) 
+                            && GetMonData(mon, MON_DATA_MAX_HP, NULL) != 0) // heal only if not dead
                         {
                             if (e == 0)
                             {
@@ -4944,7 +4942,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                     }
                                 }
                             }
-                            else
+                            else //if used in opponent?
                             {
                                 gBattleMoveDamage = -dataUnsigned;
                             }
@@ -5034,8 +5032,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                 {
                     switch (var_38)
                     {
-                    case 0:
-                    case 1:
+                    case 0: 
+                    case 1: 
                     case 2:
                     case 3:
                         evCount = GetMonEVCount(mon);
@@ -5075,7 +5073,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         retVal = FALSE;
                         var_3C++;
                         break;
-                    case 4:
+                    case 4: 
                         dataUnsigned = (GetMonData(mon, MON_DATA_PP_BONUSES, NULL) & gPPUpGetMask[moveIndex]) >> (moveIndex * 2);
                         r5 = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
                         if (dataUnsigned < 3 && r5 > 4)
@@ -5091,7 +5089,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             retVal = FALSE;
                         }
                         break;
-                    case 5:
+                    case 5: 
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 100 && (retVal == 0 || var_28 != 0) && !sub_806F104() && var_34 == 0)
                         {
                             var_34 = itemEffect[var_3C];
@@ -5116,7 +5114,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         }
                         var_3C++;
                         break;
-                    case 6:
+                    case 6: 
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 200
                          && (retVal == 0 || var_28 != 0) && !sub_806F104() && var_34 == 0)
                         {
