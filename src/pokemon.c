@@ -2855,18 +2855,20 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
     if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == ITEM_PREMIER_BALL){
         SetMonData(dest, MON_DATA_HP, &value);
     }
-    if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == 12){
+    else if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == 12){
         SetMonData(dest, MON_DATA_HP, &value);
     }
-    if(pokeball == 12){
+    else if(pokeball == 12){
         SetMonData(dest, MON_DATA_HP, &value);
     }
+    else if(pokeball == ITEM_ULTRA_BALL){
     value = 1;
-    if(pokeball == ITEM_ULTRA_BALL){
         SetMonData(dest, MON_DATA_HP, &value);
     }
-    value = 2;
-    SetMonData(dest, MON_DATA_HP, &value);
+    else{
+        value = 2;
+        SetMonData(dest, MON_DATA_HP, &value);
+    }
 }
 
 u8 GetLevelFromMonExp(struct Pokemon *mon)
