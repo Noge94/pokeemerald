@@ -71,9 +71,24 @@ Route102_EventScript_Tiana:: @ 81EC1CA
 	end
 
 Route102_EventScript_Allen:: @ 81EC1E1
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated, Route102_EventScript_AllenDefeated
 	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route102_EventScript_AllenDefeated:: @ 81EC1E1
+	msgbox Route102_Text_AllenGivesPokeball, MSGBOX_DEFAULT
+	giveitem_std ITEM_POKE_BALL
+	compare VAR_RESULT, 0
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull
+	msgbox Route102_Text_AllenSeeYa, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_Text_AllenGivesPokeball: @ 81EC1F8
+	.string "Good battle! Take this.\p"
+
+Route102_Text_AllenSeeYa: @ 81EC1F8
+	.string "See ya!\n"
 
 Route102_Text_WatchMeCatchPokemon: @ 81EC1F8
 	.string "WALLY: {PLAYER}…\n"

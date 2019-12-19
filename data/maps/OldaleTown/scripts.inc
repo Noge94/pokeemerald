@@ -323,7 +323,7 @@ OldaleTown_Movement_RivalExit: @ 81E9177
 
 OldaleTown_Movement_WatchRivalExit: @ 81E917E
 	delay_8
-	delay_4
+	@delay_4 @ delete this to reduce wait?
 	walk_in_place_fastest_down
 	step_end
 

@@ -6335,7 +6335,7 @@ static void SetPlacedMonData(u8 boxId, u8 position)
         BoxMonRestorePP(&sPSSData->movingMon.box);
         hp = GetMonData(&sPSSData->movingMon, MON_DATA_HP);
         if(hp == 0){
-            ball = 12;
+            ball = 0;
 
             SetMonData(&sPSSData->movingMon, MON_DATA_POKEBALL, &ball); //set ITEM_NONE as pokeball
         }

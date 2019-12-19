@@ -18,12 +18,23 @@ static bool8 SB1ContainsWords(u16 *a);
 static bool8 IsEasyChatPairEqual(u16 *words1, u16 *words2);
 static s16 GetEqualEasyChatPairIndex(struct EasyChatPair *s, struct EasyChatPair *a, u16 b);
 
+void SetSefiCebado(void)
+{
+    gSaveBlock1Ptr->easyChatPairs[0].words[0] = EC_WORD(EC_GROUP_PEOPLE, 0xa);
+
+    gSaveBlock1Ptr->easyChatPairs[0].words[1] = EC_WORD(EC_GROUP_CONDITIONS, 0x11);
+
+    gSaveBlock1Ptr->easyChatPairs[0].unk1_6 = Random() & 1;
+    sub_8122B28(&(gSaveBlock1Ptr->easyChatPairs[0]));
+}
+
 // text
 void InitDewfordTrend(void)
 {
     u16 i;
 
-    for (i = 0; i < 5; i++)
+    SetSefiCebado();
+    for (i = 1; i < 5; i++)
     {
         gSaveBlock1Ptr->easyChatPairs[i].words[0] = sub_811EE38(EC_GROUP_CONDITIONS);
 

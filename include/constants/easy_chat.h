@@ -312,7 +312,7 @@
 #define EC_WORD_YOU_VE       (EC_GROUP_PEOPLE << 9) | 0x7
 #define EC_WORD_MOTHER       (EC_GROUP_PEOPLE << 9) | 0x8
 #define EC_WORD_GRANDFATHER  (EC_GROUP_PEOPLE << 9) | 0x9
-#define EC_WORD_UNCLE        (EC_GROUP_PEOPLE << 9) | 0xa
+#define EC_WORD_SEFI        (EC_GROUP_PEOPLE << 9) | 0xa
 #define EC_WORD_FATHER       (EC_GROUP_PEOPLE << 9) | 0xb
 #define EC_WORD_BOY          (EC_GROUP_PEOPLE << 9) | 0xc
 #define EC_WORD_ADULT        (EC_GROUP_PEOPLE << 9) | 0xd

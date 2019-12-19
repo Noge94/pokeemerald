@@ -2851,22 +2851,10 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
     SetMonData(dest, MON_DATA_MAIL, &value);
     CalculateMonStats(dest);
     pokeball = GetMonData(dest, MON_DATA_POKEBALL);
-    value = 0;
-    if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == ITEM_PREMIER_BALL){
-        SetMonData(dest, MON_DATA_HP, &value);
-    }
-    else if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == 12){
-        SetMonData(dest, MON_DATA_HP, &value);
-    }
-    else if(pokeball == 12){
-        SetMonData(dest, MON_DATA_HP, &value);
-    }
-    else if(pokeball == ITEM_ULTRA_BALL){
-    value = 1;
-        SetMonData(dest, MON_DATA_HP, &value);
-    }
-    else{
-        value = 2;
+
+    //if pokemon is dead
+    if(GetMonData(dest, MON_DATA_POKEBALL, NULL) == ITEM_NONE){
+        value = 0;
         SetMonData(dest, MON_DATA_HP, &value);
     }
 }
