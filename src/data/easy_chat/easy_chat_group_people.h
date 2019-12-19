@@ -8,7 +8,7 @@ const u8 gEasyChatWord_Youre[] = _("YOU'RE");
 const u8 gEasyChatWord_Youve[] = _("YOU'VE");
 const u8 gEasyChatWord_Mother[] = _("MOTHER");
 const u8 gEasyChatWord_Grandfather[] = _("GRANDFATHER");
-const u8 gEasyChatWord_Uncle[] = _("UNCLE");
+const u8 gEasyChatWord_Sefi[] = _("SEFI");
 const u8 gEasyChatWord_Father[] = _("FATHER");
 const u8 gEasyChatWord_Boy[] = _("BOY");
 const u8 gEasyChatWord_Adult[] = _("ADULT");
@@ -126,7 +126,7 @@ const struct EasyChatWordInfo gEasyChatGroup_People[] = {
         .enabled = TRUE,
     },
     {
-        .text = gEasyChatWord_Uncle,
+        .text = gEasyChatWord_Sefi,
         .alphabeticalOrder = 54,
         .enabled = TRUE,
     },

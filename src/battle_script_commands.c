@@ -606,7 +606,7 @@ static const struct StatFractions sAccuracyStageRatios[] =
 
 // The chance is 1/N for each stage.
 static const u16 sCriticalHitChance[] = {16, 8, 4, 3, 2};
-static const u8 MAX_LVL_DIFFERENCE_TO_WIN_EXP = 5;
+static const u8 MAX_LVL_DIFFERENCE_TO_WIN_EXP = 4;
 
 
 static const u32 sStatusFlagsForMoveEffects[] =

@@ -548,7 +548,12 @@ static void CreateWildMon(u16 species, u8 level, u8 wildMonIndex)
     bool32 checkCuteCharm;
 
     // Noge liandola
-    species = ((species<<(wildMonIndex/2+1))^trainerId()) % NUM_SPECIES;
+    u16 oldUnownsCount = 25;
+    species = (((species*gMapHeader.music)<<(wildMonIndex%2+1))^trainerId()) % (NUM_SPECIES-1-oldUnownsCount);
+    species++;
+    if(species>=252){
+        species+=oldUnownsCount;
+    }
     while(level < gMinWildLevelTable[species]){
         species = (species-1) % NUM_SPECIES;
     }
