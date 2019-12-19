@@ -629,6 +629,12 @@
 	.endm
 
 	@ If the Trainer flag for Trainer index is not set, this command does absolutely nothing.
+	@ 1-battleType, 
+	@ 2-trainerId, 
+	@ 3-local_id(usually 0, changed only in Lavaridge gym)
+	@ 4-Prebattle text
+	@ 5-Postbattle text
+	@ 6-Postbattle event_script
 	.macro trainerbattle type:req, trainer:req, local_id:req, pointer1:req, pointer2, pointer3, pointer4
 	.byte 0x5c
 	.byte \type
