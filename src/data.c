@@ -80,12 +80,12 @@ const struct SpriteFrameImage gTrainerBackPicTable_Leaf[] =
     gTrainerBackPic_Leaf + 0x2000, 0x0800,
 };
 
-const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireBrendan[] =
+const struct SpriteFrameImage gTrainerBackPicTable_Noge[] =
 {
-    gTrainerBackPic_RubySapphireBrendan, 0x0800,
-    gTrainerBackPic_RubySapphireBrendan + 0x0800, 0x0800,
-    gTrainerBackPic_RubySapphireBrendan + 0x1000, 0x0800,
-    gTrainerBackPic_RubySapphireBrendan + 0x1800, 0x0800,
+    gTrainerBackPic_Noge, 0x0800,
+    gTrainerBackPic_Noge + 0x0800, 0x0800,
+    gTrainerBackPic_Noge + 0x1000, 0x0800,
+    gTrainerBackPic_Noge + 0x1800, 0x0800,
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireMay[] =

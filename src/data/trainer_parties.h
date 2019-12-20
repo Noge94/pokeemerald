@@ -12419,18 +12419,43 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Leaf[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Brendan16[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Noge1[] = {
     {
-    .iv = 0,
+    .iv = 50,
     .lvl = 5,
-    .species = SPECIES_GROUDON,
+    .species = SPECIES_PSYDUCK,
+    },
+    {
+    .iv = 50,
+    .lvl = 4,
+    .species = SPECIES_SENTRET,
+    },
+    {
+    .iv = 50,
+    .lvl = 6,
+    .species = SPECIES_EEVEE,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_May16[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Noge2[] = {
     {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_KYOGRE,
+    .iv = 100,
+    .lvl = 17,
+    .species = SPECIES_PSYDUCK,
+    },
+    {
+    .iv = 50,
+    .lvl = 15,
+    .species = SPECIES_ARON,
+    },
+    {
+    .iv = 50,
+    .lvl = 16,
+    .species = SPECIES_FURRET,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_EEVEE,
     }
 };

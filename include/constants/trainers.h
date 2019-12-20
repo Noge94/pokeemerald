@@ -105,7 +105,7 @@
 #define TRAINER_PIC_PYRAMID_KING_BRANDON  88
 #define TRAINER_PIC_RED                   89
 #define TRAINER_PIC_LEAF                  90
-#define TRAINER_PIC_RS_BRENDAN            91
+#define TRAINER_PIC_NOGE            91
 #define TRAINER_PIC_RS_MAY                92
 
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -197,7 +197,7 @@
 #define FACILITY_CLASS_DOME_ACE_TUCKER       0x4d
 #define FACILITY_CLASS_RED                   0x4e
 #define FACILITY_CLASS_LEAF                  0x4f
-#define FACILITY_CLASS_RS_BRENDAN            0x50
+#define FACILITY_CLASS_NOGE            0x50
 #define FACILITY_CLASS_RS_MAY                0x51
 
 #define FACILITY_CLASSES_COUNT               0x52
@@ -347,7 +347,7 @@
 #define TRAINER_CLASS_FACTORY_HEAD   0x3e
 #define TRAINER_CLASS_PIKE_QUEEN     0x3f
 #define TRAINER_CLASS_PYRAMID_KING   0x40
-#define TRAINER_CLASS_RS_PROTAG      0x41
+#define TRAINER_CLASS_NOGE      0x41
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

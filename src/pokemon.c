@@ -1994,7 +1994,7 @@ static const struct SpriteTemplate gSpriteTemplateTable_TrainerBackSprites[] =
         .paletteTag = 0,
         .oam = &gOamData_831ACB0,
         .anims = NULL,
-        .images = gTrainerBackPicTable_RubySapphireBrendan,
+        .images = gTrainerBackPicTable_Noge,
         .affineAnims = gUnknown_082FF618,
         .callback = sub_8039BB4,
     },
@@ -6271,6 +6271,8 @@ u16 GetBattleBGM(void)
             return MUS_BATTLE35;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_BATTLE38;
+        case TRAINER_CLASS_NOGE:
+            return MUS_RG_VS_GYM;
         case TRAINER_CLASS_SALON_MAIDEN:
         case TRAINER_CLASS_DOME_ACE:
         case TRAINER_CLASS_PALACE_MAVEN:
