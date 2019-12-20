@@ -10108,7 +10108,23 @@ static void Cmd_handleballthrow(void)
         if (gLastUsedItem == ITEM_SAFARI_BALL)
             catchRate = gBattleStruct->safariCatchFactor * 1275 / 100;
         else
+        {
             catchRate = gBaseStats[gBattleMons[gBattlerTarget].species].catchRate;
+
+            if(catchRate < 255 - gBaseStats[gBattleMons[gBattlerTarget].species].expYield)
+            {
+                // base catch rate on expYield for low catch rate pokemons
+                catchRate = 255 - gBaseStats[gBattleMons[gBattlerTarget].species].expYield;
+            }
+
+            // catch rate bonus for low lvl pokemon
+            catchRate += 60 - gBattleMons[gBattlerTarget].level;
+
+            if(catchRate>255)
+            {
+                catchRate = 255;
+            }
+        }
 
         if (gLastUsedItem > ITEM_SAFARI_BALL)
         {
@@ -10159,8 +10175,8 @@ static void Cmd_handleballthrow(void)
             ballMultiplier = sBallCatchBonuses[gLastUsedItem - 2];
 
         odds = (catchRate * ballMultiplier / 10)
-            * (gBattleMons[gBattlerTarget].maxHP * 3 - gBattleMons[gBattlerTarget].hp * 2)
-            / (3 * gBattleMons[gBattlerTarget].maxHP);
+            * (gBattleMons[gBattlerTarget].maxHP * 6 - gBattleMons[gBattlerTarget].hp * 5)
+            / (6 * gBattleMons[gBattlerTarget].maxHP);
 
         if (gBattleMons[gBattlerTarget].status1 & (STATUS1_SLEEP | STATUS1_FREEZE))
             odds *= 2;

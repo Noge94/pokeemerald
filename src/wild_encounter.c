@@ -549,7 +549,8 @@ static void CreateWildMon(u16 species, u8 level, u8 wildMonIndex)
 
     // Noge liandola
     u16 oldUnownsCount = 25;
-    species = (((species*gMapHeader.music)<<(wildMonIndex%2+1))^trainerId()) % (NUM_SPECIES-1-oldUnownsCount);
+    u32 randomized = ((species*gMapHeader.music)<<(wildMonIndex%2+1)) * trainerId() * 1103515245 + 24691;
+    species = (randomized >> 16) % (NUM_SPECIES-1-oldUnownsCount);
     species++;
     if(species>=252){
         species+=oldUnownsCount;
