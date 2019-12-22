@@ -29,6 +29,7 @@
 // Position of the sprite of the selected starter Pokemon
 #define STARTER_PKMN_POS_X 120
 #define STARTER_PKMN_POS_Y 64
+#define NUM_STARTERS 123
 
 // text
 extern const u8 gText_BirchInTrouble[];
@@ -50,6 +51,133 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y);
 void sub_81346DC(struct Sprite *sprite);
 void sub_813473C(struct Sprite *sprite);
 void StarterPokemonSpriteCallback(struct Sprite *sprite);
+
+const u16 gLegalStarters[NUM_STARTERS] =
+{
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_SQUIRTLE,
+    SPECIES_CATERPIE,
+    SPECIES_WEEDLE,
+    SPECIES_PIDGEY,
+    SPECIES_RATTATA,
+    SPECIES_SPEAROW,
+    SPECIES_EKANS,
+    SPECIES_PIKACHU,
+    SPECIES_SANDSHREW,
+    SPECIES_NIDORAN_F,
+    SPECIES_NIDORAN_M,
+    SPECIES_CLEFAIRY,
+    SPECIES_VULPIX,
+    SPECIES_JIGGLYPUFF,
+    SPECIES_ZUBAT,
+    SPECIES_ODDISH,
+    SPECIES_PARAS,
+    SPECIES_VENONAT,
+    SPECIES_DIGLETT,
+    SPECIES_MEOWTH,
+    SPECIES_PSYDUCK,
+    SPECIES_MANKEY,
+    SPECIES_GROWLITHE,
+    SPECIES_POLIWAG,
+    SPECIES_ABRA,
+    SPECIES_MACHOP,
+    SPECIES_BELLSPROUT,
+    SPECIES_TENTACOOL,
+    SPECIES_GEODUDE,
+    SPECIES_PONYTA,
+    SPECIES_SLOWPOKE,
+    SPECIES_MAGNEMITE,
+    SPECIES_DODUO,
+    SPECIES_SEEL,
+    SPECIES_GRIMER,
+    SPECIES_SHELLDER,
+    SPECIES_GASTLY,
+    SPECIES_ONIX,
+    SPECIES_DROWZEE,
+    SPECIES_KRABBY,
+    SPECIES_VOLTORB,
+    SPECIES_EXEGGCUTE,
+    SPECIES_CUBONE,
+    SPECIES_KOFFING,
+    SPECIES_RHYHORN,
+    SPECIES_CHANSEY,
+    SPECIES_HORSEA,
+    SPECIES_GOLDEEN,
+    SPECIES_STARYU,
+    SPECIES_SCYTHER,
+    SPECIES_EEVEE,
+    SPECIES_PORYGON,
+    SPECIES_OMANYTE,
+    SPECIES_KABUTO,
+    SPECIES_DRATINI,
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+    SPECIES_SENTRET,
+    SPECIES_HOOTHOOT,
+    SPECIES_LEDYBA,
+    SPECIES_SPINARAK,
+    SPECIES_CHINCHOU,
+    SPECIES_NATU,
+    SPECIES_MAREEP,
+    SPECIES_MARILL,
+    SPECIES_HOPPIP,
+    SPECIES_SUNKERN,
+    SPECIES_WOOPER,
+    SPECIES_PINECO,
+    SPECIES_SNUBBULL,
+    SPECIES_TEDDIURSA,
+    SPECIES_SLUGMA,
+    SPECIES_SWINUB,
+    SPECIES_REMORAID,
+    SPECIES_HOUNDOUR,
+    SPECIES_PHANPY,
+    SPECIES_TYROGUE,
+    SPECIES_SMOOCHUM,
+    SPECIES_LARVITAR,
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_MUDKIP,
+    SPECIES_POOCHYENA,
+    SPECIES_ZIGZAGOON,
+    SPECIES_WURMPLE,
+    SPECIES_LOTAD,
+    SPECIES_SEEDOT,
+    SPECIES_NINCADA,
+    SPECIES_TAILLOW,
+    SPECIES_SHROOMISH,
+    SPECIES_WINGULL,
+    SPECIES_SURSKIT,
+    SPECIES_WAILMER,
+    SPECIES_SKITTY,
+    SPECIES_BALTOY,
+    SPECIES_BARBOACH,
+    SPECIES_CORPHISH,
+    SPECIES_CARVANHA,
+    SPECIES_TRAPINCH,
+    SPECIES_MAKUHITA,
+    SPECIES_ELECTRIKE,
+    SPECIES_NUMEL,
+    SPECIES_SPHEAL,
+    SPECIES_CACNEA,
+    SPECIES_SNORUNT,
+    SPECIES_SPOINK,
+    SPECIES_MEDITITE,
+    SPECIES_SWABLU,
+    SPECIES_DUSKULL,
+    SPECIES_SLAKOTH,
+    SPECIES_GULPIN,
+    SPECIES_WHISMUR,
+    SPECIES_CLAMPERL,
+    SPECIES_SHUPPET,
+    SPECIES_ARON,
+    SPECIES_LILEEP,
+    SPECIES_ANORITH,
+    SPECIES_RALTS,
+    SPECIES_BAGON,
+    SPECIES_BELDUM,
+};
 
 static u16 sStarterChooseWindowId;
 
@@ -361,12 +489,28 @@ static const struct SpriteTemplate gUnknown_085B1F40 =
     .callback = StarterPokemonSpriteCallback
 };
 
+static u16 trainerId(){
+    return (gSaveBlock2Ptr->playerTrainerId[0]) | (gSaveBlock2Ptr->playerTrainerId[1] << 8);
+}
+
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
+    u16 species;
+    u16 oldUnownsCount = 25;
+    u32 randomized;
+
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+
+    species = sStarterMon[chosenStarterId];
+
+    randomized = species * trainerId() * 1103515245 + 24691;
+    species = (randomized >> 16) % (NUM_STARTERS);
+    species = gLegalStarters[species];
+    
+
+    return species;
 }
 
 static void VblankCB_StarterChoose(void)

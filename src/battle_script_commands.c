@@ -10175,8 +10175,10 @@ static void Cmd_handleballthrow(void)
             ballMultiplier = sBallCatchBonuses[gLastUsedItem - 2];
 
         odds = (catchRate * ballMultiplier / 10)
-            * (gBattleMons[gBattlerTarget].maxHP * 6 - gBattleMons[gBattlerTarget].hp * 5)
-            / (6 * gBattleMons[gBattlerTarget].maxHP);
+            * (
+                gBattleMons[gBattlerTarget].maxHP * 3 - gBattleMons[gBattlerTarget].hp * 2 + 
+                (gBattleMons[gBattlerTarget].maxHP - gBattleMons[gBattlerTarget].hp) / gBattleMons[gBattlerTarget].hp
+              ) / (3 * gBattleMons[gBattlerTarget].maxHP);
 
         if (gBattleMons[gBattlerTarget].status1 & (STATUS1_SLEEP | STATUS1_FREEZE))
             odds *= 2;
