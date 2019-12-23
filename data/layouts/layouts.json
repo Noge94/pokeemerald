@@ -2413,7 +2413,7 @@
         {
             "blockdata_filepath": "data/layouts/Unknown_08447028/map.bin",
             "border_filepath": "data/layouts/Unknown_08447028/border.bin",
-            "height": 9,
+            "height": 10,
             "id": "LAYOUT_UNKNOWN_08447028",
             "name": "Unknown_08447028_Layout",
             "primary_tileset": "gTileset_Building",

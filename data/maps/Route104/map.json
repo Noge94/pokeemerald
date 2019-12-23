@@ -111,6 +111,60 @@
             "var_value": "1",
             "x": 17,
             "y": 51
+        },
+        {
+            "elevation": 0,
+            "script": "Route104_EventScript_NogeTrigger2",
+            "type": "trigger",
+            "var": "VAR_NOGE_STATE",
+            "var_value": "0",
+            "x": 22,
+            "y": 50
+        },
+        {
+            "elevation": 0,
+            "script": "Route104_EventScript_NogeTrigger3",
+            "type": "trigger",
+            "var": "VAR_NOGE_STATE",
+            "var_value": "0",
+            "x": 23,
+            "y": 50
+        },
+        {
+            "elevation": 0,
+            "script": "Route104_EventScript_NogeTrigger4",
+            "type": "trigger",
+            "var": "VAR_NOGE_STATE",
+            "var_value": "0",
+            "x": 24,
+            "y": 50
+        },
+        {
+            "elevation": 0,
+            "script": "Route104_EventScript_NogeTrigger5",
+            "type": "trigger",
+            "var": "VAR_NOGE_STATE",
+            "var_value": "0",
+            "x": 25,
+            "y": 50
+        },
+        {
+            "elevation": 0,
+            "script": "Route104_EventScript_NogeTrigger1",
+            "type": "trigger",
+            "var": "VAR_NOGE_STATE",
+            "var_value": "0",
+            "x": 21,
+            "y": 50
+        },
+        {
+            "elevation": 0,
+            "script": "Route104_EventScript_NogeTrigger6",
+            "type": "trigger",
+            "var": "VAR_NOGE_STATE",
+            "var_value": "0",
+            "x": 26,
+            "y": 49
         }
     ],
     "id": "MAP_ROUTE104",
@@ -142,8 +196,8 @@
             "script": "Route104_EventScript_Girl1",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 25,
-            "y": 49
+            "x": 19,
+            "y": 52
         },
         {
             "elevation": 3,
@@ -560,6 +614,19 @@
             "trainer_type": "0",
             "x": 17,
             "y": 50
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_DEFEATED_NOGE_ROUTE_104",
+            "graphics_id": "EVENT_OBJ_GFX_LINK_RS_MAY",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "0x0",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 23,
+            "y": 43
         }
     ],
     "region_map_section": "MAPSEC_ROUTE_104",

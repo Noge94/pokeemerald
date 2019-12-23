@@ -12422,7 +12422,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Leaf[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Noge1[] = {
     {
     .iv = 50,
-    .lvl = 5,
+    .lvl = 6,
     .species = SPECIES_PSYDUCK,
     },
     {
@@ -12432,7 +12432,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Noge1[] = {
     },
     {
     .iv = 50,
-    .lvl = 6,
+    .lvl = 8,
     .species = SPECIES_EEVEE,
     }
 };

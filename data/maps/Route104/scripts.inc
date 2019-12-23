@@ -18,6 +18,119 @@ Route104_OnTransition: @ 81ECC4E
 	call Route104_EventScript_ShowOrHideWhiteHerbFlorist
 	end
 
+Route104_Text_NogeBattleIntro: 
+	.string "Hey {PLAYER}! How are you doing?\n"
+	.string "You're going to the first gym?\p"
+	.string "I'm happy to see that\n"
+	.string "you made it this far!\p"
+	.string "Have you caught any strong POKéMON?\n"
+	.string "Let's see what you've got!$"
+
+Route104_Text_NogeDefeat:
+	.string "What!\n"
+	.string "You are this strong already!?$"
+
+Route104_Text_NogePostBattle:
+	.string "You are doing pretty good!\n"
+	.string "But things will get harder, be careful.\p"
+	.string "See you later!$"
+
+Route104_EventScript_NogeTrigger1::
+	setobjectxy 35, 21, 44
+	goto Route104_EventScript_NogeBattleA
+
+Route104_EventScript_NogeTrigger2::
+	setobjectxy 35, 22, 44
+	goto Route104_EventScript_NogeBattleA
+
+Route104_EventScript_NogeTrigger3::
+	setobjectxy 35, 23, 44
+	goto Route104_EventScript_NogeBattleA
+
+Route104_EventScript_NogeTrigger4::
+	setobjectxy 35, 24, 44
+	goto Route104_EventScript_NogeBattleB
+
+Route104_EventScript_NogeTrigger5::
+	setobjectxy 35, 25, 44
+	goto Route104_EventScript_NogeBattleB
+	
+Route104_EventScript_NogeTrigger6::
+	setobjectxy 35, 25, 44
+	goto Route104_EventScript_NogeBattleB
+
+Route104_EventScript_NogeBattleA:
+	lockall
+	playbgm MUS_RG_RIVAL1, 1
+	applymovement 35, Route104_EventScript_NogeMovementDown
+	waitmovement 0
+	msgbox Route104_Text_NogeBattleIntro, MSGBOX_DEFAULT
+	playbgm MUS_RG_RIVAL2, 1
+	trainerbattle_no_intro TRAINER_NOGE_1, Route104_Text_NogeDefeat
+	setflag FLAG_DEFEATED_NOGE_ROUTE_104
+	setvar VAR_NOGE_STATE, 1
+	msgbox Route104_Text_NogePostBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement 35, Route104_EventScript_NogeLeaveRight
+	waitmovement 0
+	removeobject 35
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
+
+Route104_EventScript_NogeBattleB:
+	lockall
+	playbgm MUS_RG_RIVAL1, 1
+	applymovement 35, Route104_EventScript_NogeMovementDown
+	waitmovement 0
+	applymovement 35, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Route104_Text_NogeBattleIntro, MSGBOX_DEFAULT
+	playbgm MUS_RG_RIVAL2, 1
+	trainerbattle_no_intro TRAINER_NOGE_1, Route104_Text_NogeDefeat
+	setflag FLAG_DEFEATED_NOGE_ROUTE_104
+	setvar VAR_NOGE_STATE, 1
+	msgbox Route104_Text_NogePostBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement 35, Route104_EventScript_NogeLeaveLeft
+	waitmovement 0
+	removeobject 35
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
+
+Route104_EventScript_NogeMovementDown:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	walk_down
+	step_end
+
+Route104_EventScript_NogeLeaveRight:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route104_EventScript_NogeLeaveLeft:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 Route104_EventScript_ShowOrHideWhiteHerbFlorist:: @ 81ECC5E
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_EventScript_HideWhiteHerbFlorist
 	goto_if_unset FLAG_BADGE03_GET, Route104_EventScript_HideWhiteHerbFlorist
@@ -1010,7 +1123,7 @@ Route104_EventScript_Mia:: @ 81ED5B6
 	end
 
 Route104_EventScript_Darian:: @ 81ED5D5
-	trainerbattle_no_intro TRAINER_NOGE_1, Route104_Text_DarianDefeat
+	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 

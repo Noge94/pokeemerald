@@ -51,6 +51,7 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y);
 void sub_81346DC(struct Sprite *sprite);
 void sub_813473C(struct Sprite *sprite);
 void StarterPokemonSpriteCallback(struct Sprite *sprite);
+u16 RandomizeSpecies(u16 species);
 
 const u16 gLegalStarters[NUM_STARTERS] =
 {
@@ -497,7 +498,6 @@ static u16 trainerId(){
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
     u16 species;
-    u16 oldUnownsCount = 25;
     u32 randomized;
 
     if (chosenStarterId > STARTER_MON_COUNT)
@@ -505,11 +505,31 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 
     species = sStarterMon[chosenStarterId];
 
+    species = RandomizeSpecies(species);
+    
+    switch (chosenStarterId){
+        case 0:
+        break;
+        case 1:
+        if(species == GetStarterPokemon(0)){
+            species = RandomizeSpecies(species);
+        }
+        break;
+        case 2:
+        if(species == GetStarterPokemon(0) || species == GetStarterPokemon(0)){
+            species = RandomizeSpecies(species);
+        }
+        break;
+    }
+
+    return species;
+}
+
+u16 RandomizeSpecies(u16 species){
+    u32 randomized;
     randomized = species * trainerId() * 1103515245 + 24691;
     species = (randomized >> 16) % (NUM_STARTERS);
     species = gLegalStarters[species];
-    
-
     return species;
 }
 
