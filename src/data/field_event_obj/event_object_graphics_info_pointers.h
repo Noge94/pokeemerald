@@ -233,7 +233,7 @@ const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_Leaf;
 const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_Deoxys;
 const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_BirthIslandStone;
 const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_Brandon;
-const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_RubySapphireBrendan;
+const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_Noge;
 const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_RubySapphireMay;
 const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_Lugia;
 const struct EventObjectGraphicsInfo gEventObjectGraphicsInfo_HoOh;
@@ -482,7 +482,7 @@ const struct EventObjectGraphicsInfo *const gEventObjectGraphicsInfoPointers[] =
     [EVENT_OBJ_GFX_DEOXYS] =                   &gEventObjectGraphicsInfo_Deoxys,
     [EVENT_OBJ_GFX_DEOXYS_TRIANGLE] =          &gEventObjectGraphicsInfo_BirthIslandStone,
     [EVENT_OBJ_GFX_BRANDON] =                  &gEventObjectGraphicsInfo_Brandon,
-    [EVENT_OBJ_GFX_LINK_RS_BRENDAN] =          &gEventObjectGraphicsInfo_RubySapphireBrendan,
+    [EVENT_OBJ_GFX_LINK_RS_BRENDAN] =          &gEventObjectGraphicsInfo_Noge,
     [EVENT_OBJ_GFX_LINK_RS_MAY] =              &gEventObjectGraphicsInfo_RubySapphireMay,
     [EVENT_OBJ_GFX_LUGIA] =                    &gEventObjectGraphicsInfo_Lugia,
     [EVENT_OBJ_GFX_HOOH] =                     &gEventObjectGraphicsInfo_HoOh,

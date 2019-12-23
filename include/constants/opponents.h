@@ -854,8 +854,8 @@
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851
 #define TRAINER_LEAF                        852
-#define TRAINER_BRENDAN_16                  853
-#define TRAINER_MAY_16                      854
+#define TRAINER_NOGE_1                      853
+#define TRAINER_NOGE_2                      854
 
 #define TRAINERS_COUNT                      855
 

@@ -37,9 +37,9 @@
 #define FLAG_TEMP_1E    0x1E
 #define FLAG_TEMP_1F    0x1F
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
+#define FLAG_NOGEHOUSE_ITEM1    0x20 
+#define FLAG_OLDALE_HIDDEN_POTION    0x21 
+#define FLAG_DEFEATED_NOGE_ROUTE_104    0x22 
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag

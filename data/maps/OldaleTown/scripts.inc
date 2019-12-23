@@ -29,6 +29,10 @@ OldaleTown_EventScript_CitySign:: @ 81E8EEA
 	msgbox OldaleTown_Text_CitySign, MSGBOX_SIGN
 	end
 
+OldaleTown_EventScript_NogeHouseSign:: @ 81E8EEA
+	msgbox OldaleTown_Text_NogeHouseSign, MSGBOX_SIGN
+	end
+
 OldaleTown_EventScript_Girl:: @ 81E8EF3
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
@@ -321,9 +325,9 @@ OldaleTown_Movement_RivalExit: @ 81E9177
 	walk_down
 	step_end
 
+@delay_8 @ delete this to reduce wait?
 OldaleTown_Movement_WatchRivalExit: @ 81E917E
-	delay_8
-	@delay_4 @ delete this to reduce wait?
+	delay_4  
 	walk_in_place_fastest_down
 	step_end
 
@@ -400,4 +404,7 @@ OldaleTown_Text_BrendanLetsGoBack: @ 81E948A
 OldaleTown_Text_CitySign: @ 81E94DA
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
+
+OldaleTown_Text_NogeHouseSign:
+	.string "NOGE'S HOUSE$"
 

@@ -85,10 +85,10 @@ Route102_EventScript_AllenDefeated:: @ 81EC1E1
 	end
 
 Route102_Text_AllenGivesPokeball: @ 81EC1F8
-	.string "Good battle! Take this.\p"
+	.string "Good battle! Take this.$\p"
 
 Route102_Text_AllenSeeYa: @ 81EC1F8
-	.string "See ya!\n"
+	.string "See ya!$\n"
 
 Route102_Text_WatchMeCatchPokemon: @ 81EC1F8
 	.string "WALLY: {PLAYER}…\n"
