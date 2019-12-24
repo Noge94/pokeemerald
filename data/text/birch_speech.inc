@@ -1,3 +1,22 @@
+gText_Noge_Welcome:: @ 82C897B
+	.string "Hey! Nice to meet you, I'm NOGE.\p"
+	.string "Before you start, you should\n"
+	.string "know a few things:\p"
+	.string "First, defeated POKéMON are dead.\p"
+	.string "Which means, when your POKéMONS faint\n"
+	.string "you won't be able to use them again.\p"
+	.string "Second, POKéMON you encounter\n"
+	.string "will be random.\p"
+	.string "Be careful, you never\n"
+	.string "know what will come next.\p"
+	.string "Third, You cannot buy POKé BALLS.\p"
+	.string "Put to good use the ones you get.\p"
+	.string ".....\p"
+	.string "I think that's all for now.\p"
+	.string "Good luck!\n"
+	.string "I'll leave you with the PROFESSOR\p"
+	.string "$"
+	
 gText_Birch_Welcome:: @ 82C897B
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of POKéMON!\p"

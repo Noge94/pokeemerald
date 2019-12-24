@@ -67,7 +67,7 @@
     "id": "MAP_OLDALE_TOWN_HOUSE1",
     "layout": "LAYOUT_UNKNOWN_08447028",
     "map_type": "MAP_TYPE_INDOOR",
-    "music": "MUS_MACHI_S4",
+    "music": "MUS_RG_MASARA",
     "name": "OldaleTown_House1",
     "object_events": [
         {
