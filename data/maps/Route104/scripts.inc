@@ -71,7 +71,9 @@ Route104_EventScript_NogeBattleA:
 	setvar VAR_NOGE_STATE, 1
 	msgbox Route104_Text_NogePostBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement 35, Route104_EventScript_NogeLeaveRight
+	applymovement 35, Route104_EventScript_NogeStepRight
+	waitmovement 0
+	applymovement 35, Route104_EventScript_NogeLeave
 	waitmovement 0
 	removeobject 35
 	savebgm MUS_DUMMY
@@ -93,7 +95,9 @@ Route104_EventScript_NogeBattleB:
 	setvar VAR_NOGE_STATE, 1
 	msgbox Route104_Text_NogePostBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement 35, Route104_EventScript_NogeLeaveLeft
+	applymovement 35, Route104_EventScript_NogeStepLeft
+	waitmovement 0
+	applymovement 35, Route104_EventScript_NogeLeave
 	waitmovement 0
 	removeobject 35
 	savebgm MUS_DUMMY
@@ -112,18 +116,17 @@ Route104_EventScript_NogeMovementDown:
 	walk_down
 	step_end
 
-Route104_EventScript_NogeLeaveRight:
+Route104_EventScript_NogeStepRight:
 	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
 	step_end
 
-Route104_EventScript_NogeLeaveLeft:
+Route104_EventScript_NogeStepLeft:
 	walk_left
+	step_end
+
+Route104_EventScript_NogeLeave:
+	walk_down
+	walk_down
 	walk_down
 	walk_down
 	walk_down

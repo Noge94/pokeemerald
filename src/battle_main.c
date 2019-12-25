@@ -71,6 +71,7 @@ extern const u8 *const gBattlescriptsForBallThrow[];
 extern const u8 *const gBattlescriptsForRunningByItem[];
 extern const u8 *const gBattlescriptsForUsingItem[];
 extern const u8 *const gBattlescriptsForSafariActions[];
+extern const u16 gMinWildLevelTable[];
 
 // this file's functions
 #if !defined(NONMATCHING) && MODERN
@@ -1940,6 +1941,10 @@ static void sub_8038538(struct Sprite *sprite)
     }
 }
 
+static u16 trainerId(){
+    return (gSaveBlock2Ptr->playerTrainerId[0]) | (gSaveBlock2Ptr->playerTrainerId[1] << 8);
+}
+
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u32 nameHash = 0;
@@ -1947,6 +1952,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 fixedIV;
     s32 i, j;
     u8 monsCount;
+    u16 species;
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1994,7 +2000,25 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+
+                species = partyData[i].species;
+                if( gTrainers[trainerNum].trainerClass != TRAINER_CLASS_AQUA_LEADER && gTrainers[trainerNum].trainerClass != TRAINER_CLASS_MAGMA_LEADER &&  
+                    gTrainers[trainerNum].trainerClass != TRAINER_CLASS_ELITE_FOUR && gTrainers[trainerNum].trainerClass != TRAINER_CLASS_CHAMPION &&  
+                    gTrainers[trainerNum].trainerClass != TRAINER_CLASS_PKMN_TRAINER_3 && gTrainers[trainerNum].trainerClass != TRAINER_CLASS_NOGE &&  
+                    gTrainers[trainerNum].trainerClass != TRAINER_CLASS_LEADER)
+                {
+                    species = (((gTrainers[trainerNum].trainerName)[0]*species)<<i) * trainerId() * 1103515245 + 24691;
+                    species = (species >> 8) % (NUM_SPECIES-1-25);
+                    species++;
+                    if(species>=252){
+                        species+=25;
+                    }
+                    while(partyData[i].lvl < gMinWildLevelTable[species]){
+                        species = (species-1) % NUM_SPECIES;
+                    }
+                }
+
+                CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
