@@ -2,14 +2,21 @@ OldaleTown_House1_MapScripts:: @ 81FBE85
 	.byte 0
 	
 OldaleTown_House1_EventScript_Laptop:: @ 822B345
-	msgbox OldaleTown_House1_Text_Laptop, MSGBOX_SIGN
+	msgbox OldaleTown_House1_Text_Laptop, MSGBOX_YESNO
+	closemessage
+	compare VAR_RESULT, YES
+	goto_if_eq OldaleTown_House1_Text_TwitterFollow
+	releaseall
 	end
 
 OldaleTown_House1_Text_Laptop: @ 822B6FC
-	.string "There's a message on the screen:\p"
-	.string "“Null pointer exception”\p"
-	.string "...............\n"
-	.string "Does this guy know how to code?$"
+	.string "NOGE's twitter acount is on the screen.\p"
+	.string "Most of the content is about cats,\n"
+	.string "smash and bad indie games.\p"
+	.string "Follow him?$"
+
+OldaleTown_House1_Text_TwitterFollow: @ 822B6FC
+	.string "You're now following NogeSky!$"
 	
 OldaleTown_House1_EventScript_Box:: @ 822B345
 	msgbox OldaleTown_House1_Text_Box, MSGBOX_SIGN
@@ -30,7 +37,8 @@ OldaleTown_House1_EventScript_Fridge:: @ 822B345
 	end
 
 OldaleTown_House1_Text_Fridge: @ 822B6FC
-	.string "Looks like he eats pizza every day.$"
+	.string "The fridge contains unbelievable\n"
+	.string "amounts of pizza.$"
 
 OldaleToun_House1_EventScript_GameCube:: @ 81F865F
 	msgbox OldaleToun_House1_Text_ItsAGameCube, MSGBOX_SIGN

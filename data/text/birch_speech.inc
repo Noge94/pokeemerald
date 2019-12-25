@@ -11,10 +11,9 @@ gText_Noge_Welcome:: @ 82C897B
 	.string "know what will come next.\p"
 	.string "Third, You cannot buy POKé BALLS.\p"
 	.string "Put to good use the ones you get.\p"
-	.string ".....\p"
+	.string ". . . . . \n"
 	.string "I think that's all for now.\p"
-	.string "Good luck!\n"
-	.string "I'll leave you with the PROFESSOR\p"
+	.string "Good luck!\p"
 	.string "$"
 	
 gText_Birch_Welcome:: @ 82C897B
