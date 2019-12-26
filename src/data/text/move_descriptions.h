@@ -1418,7 +1418,7 @@ static const u8 sPsychoBoostDescription[] = _(
     "but sharply lowers SP. ATK.");
 
 static const u8 sSuperSteveDescription[] = _(
-    "The most powerful attack,\n"
+    "The most powerful attack\n"
     "in the universe.");
     
 

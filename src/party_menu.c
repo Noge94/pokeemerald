@@ -3806,15 +3806,8 @@ static void DisplayCantUseSurfMessage(void)
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_SURF_HERE);
 }
 
-static int TargetPokemonIsDead(void)
-{
-    return TRUE;
-}
-
 static bool8 SetUpFieldMove_Fly(void)
 {
-    if (TargetPokemonIsDead() == TRUE)
-        return FALSE;
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
         return TRUE;
     else

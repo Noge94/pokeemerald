@@ -54,249 +54,127 @@ void StarterPokemonSpriteCallback(struct Sprite *sprite);
 u16 RandomizeSpecies(u16 species);
 
 const u16 gLegalStarters[NUM_STARTERS] =
-{
-    SPECIES_BULBASAUR,  
-    SPECIES_CHARMANDER, 
-    SPECIES_SQUIRTLE,   
-    SPECIES_CATERPIE,   
-    SPECIES_WEEDLE,      
-    SPECIES_PIDGEY,     
-    SPECIES_RATTATA,    
-    SPECIES_SPEAROW,    
-    SPECIES_EKANS,      
-    SPECIES_PIKACHU,     
-    SPECIES_SANDSHREW,  
-    SPECIES_NIDORAN_F,  
-    SPECIES_NIDORAN_M,  
-    SPECIES_CLEFAIRY,   
-    SPECIES_VULPIX,     
-    SPECIES_JIGGLYPUFF, 
-    SPECIES_ZUBAT,       
-    SPECIES_ODDISH,     
-    SPECIES_PARAS,      
-    SPECIES_VENONAT,    
-    SPECIES_DIGLETT,    
-    SPECIES_MEOWTH,     
-    SPECIES_PSYDUCK,    
-    SPECIES_MANKEY,     
-    SPECIES_GROWLITHE,  
-    SPECIES_POLIWAG,    
-    SPECIES_MACHOP,     
-    SPECIES_BELLSPROUT, 
-    SPECIES_TENTACOOL,   
-    SPECIES_GEODUDE,    
-    SPECIES_PONYTA,     
-    SPECIES_SLOWPOKE,   
-    SPECIES_MAGNEMITE,  
-    SPECIES_DODUO,      
-    SPECIES_SEEL,       
-    SPECIES_GRIMER,     
-    SPECIES_SHELLDER,   
-    SPECIES_GASTLY,     
-    SPECIES_ONIX,       
-    SPECIES_DROWZEE,    
-    SPECIES_KRABBY,     
-    SPECIES_VOLTORB,    
-    SPECIES_EXEGGCUTE,  
-    SPECIES_CUBONE,     
-    SPECIES_KOFFING,    
-    SPECIES_RHYHORN,    
-    SPECIES_CHANSEY,    
-    SPECIES_HORSEA,     
-    SPECIES_GOLDEEN,    
-    SPECIES_STARYU,     
-    SPECIES_SCYTHER,     
-    SPECIES_EEVEE,      
-    SPECIES_PORYGON,    
-    SPECIES_OMANYTE,    
-    SPECIES_KABUTO,     
-    SPECIES_DRATINI,    
-    SPECIES_CHIKORITA,  
-    SPECIES_CYNDAQUIL,  
-    SPECIES_TOTODILE,   
-    SPECIES_SENTRET,    
-    SPECIES_HOOTHOOT,   
-    SPECIES_LEDYBA,     
-    SPECIES_SPINARAK,    
-    SPECIES_CHINCHOU,   
-    SPECIES_NATU,       
-    SPECIES_MAREEP,     
-    SPECIES_MARILL,     
-    SPECIES_SUNKERN,    
-    SPECIES_WOOPER,      
-    SPECIES_PINECO,     
-    SPECIES_SNUBBULL,   
-    SPECIES_TEDDIURSA,  
-    SPECIES_SLUGMA,     
-    SPECIES_SWINUB,     
-    SPECIES_REMORAID,    
-    SPECIES_HOUNDOUR,   
-    SPECIES_PHANPY,     
-    SPECIES_TYROGUE,    
-    SPECIES_SMOOCHUM,   
-    SPECIES_LARVITAR,   
-    SPECIES_TREECKO,    
-    SPECIES_TORCHIC,    
-    SPECIES_MUDKIP,     
-    SPECIES_POOCHYENA,  
-    SPECIES_ZIGZAGOON,  
-    SPECIES_WURMPLE,    
-    SPECIES_LOTAD,      
-    SPECIES_SEEDOT,     
-    SPECIES_NINCADA,    
-    SPECIES_TAILLOW,    
-    SPECIES_SHROOMISH,  
-    SPECIES_WINGULL,     
-    SPECIES_SURSKIT,    
-    SPECIES_SKITTY,     
-    SPECIES_BALTOY,     
-    SPECIES_BARBOACH,   
-    SPECIES_CORPHISH,   
-    SPECIES_CARVANHA,   
-    SPECIES_TRAPINCH,   
-    SPECIES_MAKUHITA,   
-    SPECIES_ELECTRIKE,  
-    SPECIES_NUMEL,      
-    SPECIES_SPHEAL,      
-    SPECIES_CACNEA,     
-    SPECIES_SNORUNT,     
-    SPECIES_MEDITITE,   
-    SPECIES_SWABLU,     
-    SPECIES_DUSKULL,     
-    SPECIES_SLAKOTH,    
-    SPECIES_GULPIN,     
-    SPECIES_WHISMUR,    
-    SPECIES_CLAMPERL,    
-    SPECIES_SHUPPET,     
-    SPECIES_ARON,       
-    SPECIES_LILEEP,     
-    SPECIES_ANORITH,    
-    SPECIES_RALTS,      
-    SPECIES_BAGON,      
-    SPECIES_BELDUM,     
+{       
+    SPECIES_BULBASAUR,  //tackle
+    SPECIES_CHARMANDER, //scratch
+    SPECIES_SQUIRTLE,   //tackle
+    SPECIES_CATERPIE,   //tackle
+    SPECIES_WEEDLE,     //poison sting
+    SPECIES_PIDGEY,     //tackle
+    SPECIES_RATTATA,    //tackle
+    SPECIES_SPEAROW,    //peck
+    SPECIES_EKANS,      //wrap
+    SPECIES_PIKACHU,    //thunder shock
+    SPECIES_SANDSHREW,  //scratch
+    SPECIES_NIDORAN_F,  //scratch
+    SPECIES_NIDORAN_M,  //peck
+    SPECIES_CLEFAIRY,   //pound
+    SPECIES_VULPIX,     //ember
+    SPECIES_JIGGLYPUFF, //pound
+    SPECIES_ZUBAT,      //leech life
+    SPECIES_ODDISH,     //absorb
+    SPECIES_PARAS,      //scratch
+    SPECIES_VENONAT,    //tackle
+    SPECIES_DIGLETT,    //scratch
+    SPECIES_MEOWTH,     //scratch
+    SPECIES_PSYDUCK,    //scratch
+    SPECIES_MANKEY,     //scratch
+    SPECIES_GROWLITHE,  //bite
+    SPECIES_POLIWAG,    //bubble
+    SPECIES_MACHOP,     //low kick
+    SPECIES_BELLSPROUT, //vine whip
+    SPECIES_TENTACOOL,  //poison sting
+    SPECIES_GEODUDE,    //tackle
+    SPECIES_PONYTA,     //tackle
+    SPECIES_SLOWPOKE,   //tackle
+    SPECIES_MAGNEMITE,  //tackle
+    SPECIES_DODUO,      //peck
+    SPECIES_SEEL,       //headbutt
+    SPECIES_GRIMER,     //pound
+    SPECIES_SHELLDER,   //tackle
+    SPECIES_GASTLY,     //lick
+    SPECIES_ONIX,       //tackle
+    SPECIES_DROWZEE,    //pound
+    SPECIES_KRABBY,     //bubble
+    SPECIES_VOLTORB,    //tackle
+    SPECIES_EXEGGCUTE,  //barrage
+    SPECIES_CUBONE,     //bone club
+    SPECIES_KOFFING,    //tackle
+    SPECIES_RHYHORN,    //horn attack
+    SPECIES_CHANSEY,    //pound
+    SPECIES_HORSEA,     //bubble
+    SPECIES_GOLDEEN,    //peck
+    SPECIES_STARYU,     //tackle
+    SPECIES_SCYTHER,    //quick attack
+    SPECIES_EEVEE,      //tackle
+    SPECIES_PORYGON,    //tackle
+    SPECIES_OMANYTE,    //constrict... rlly weak attack
+    SPECIES_KABUTO,     //scratch
+    SPECIES_DRATINI,    //wrap
+    SPECIES_CHIKORITA,  //tackle
+    SPECIES_CYNDAQUIL,  //tackle
+    SPECIES_TOTODILE,   //scratch
+    SPECIES_SENTRET,    //scratch
+    SPECIES_HOOTHOOT,   //tackle
+    SPECIES_LEDYBA,     //tackle
+    SPECIES_SPINARAK,   //poision sting
+    SPECIES_CHINCHOU,   //bubble
+    SPECIES_NATU,       //peck
+    SPECIES_MAREEP,     //tackle
+    SPECIES_MARILL,     //tackle
+    SPECIES_SUNKERN,    //absorb
+    SPECIES_WOOPER,     //water gun
+    SPECIES_PINECO,     //tackle
+    SPECIES_SNUBBULL,   //tackle
+    SPECIES_TEDDIURSA,  //scratch
+    SPECIES_SLUGMA,     //smog
+    SPECIES_SWINUB,     //tackle
+    SPECIES_REMORAID,   //water gun
+    SPECIES_HOUNDOUR,   //ember
+    SPECIES_PHANPY,     //tackle
+    SPECIES_TYROGUE,    //tackle
+    SPECIES_SMOOCHUM,   //pound
+    SPECIES_LARVITAR,   //bite
+    SPECIES_TREECKO,    //pound
+    SPECIES_TORCHIC,    //scratch
+    SPECIES_MUDKIP,     //tackle
+    SPECIES_POOCHYENA,  //tackle
+    SPECIES_ZIGZAGOON,  //tackle
+    SPECIES_WURMPLE,    //tackle
+    SPECIES_LOTAD,      //astonish
+    SPECIES_SEEDOT,     //bide
+    SPECIES_NINCADA,    //scratch
+    SPECIES_TAILLOW,    //peck
+    SPECIES_SHROOMISH,  //absorb
+    SPECIES_WINGULL,    //water gun
+    SPECIES_SURSKIT,    //bubble
+    SPECIES_SKITTY,     //tackle
+    SPECIES_BALTOY,     //confusion
+    SPECIES_BARBOACH,   //mud slap
+    SPECIES_CORPHISH,   //bubble
+    SPECIES_CARVANHA,   //bite
+    SPECIES_TRAPINCH,   //bite
+    SPECIES_MAKUHITA,   //tackle
+    SPECIES_ELECTRIKE,  //tackle
+    SPECIES_NUMEL,      //tackle
+    SPECIES_SPHEAL,     //water gun
+    SPECIES_CACNEA,     //absorb
+    SPECIES_SNORUNT,    //powder snow
+    SPECIES_MEDITITE,   //bide
+    SPECIES_SWABLU,     //peck
+    SPECIES_DUSKULL,    //night shade
+    SPECIES_SLAKOTH,    //scratch
+    SPECIES_GULPIN,     //pound
+    SPECIES_WHISMUR,    //uproar
+    SPECIES_CLAMPERL,   //water gun
+    SPECIES_SHUPPET,    //knock off
+    SPECIES_ARON,       //tackle
+    SPECIES_LILEEP,     //astonish
+    SPECIES_ANORITH,    //scratch
+    SPECIES_RALTS,      //confusion
+    SPECIES_BAGON,      //bite
+    SPECIES_BELDUM,     //take down
 };
-
-
-//     SPECIES_BULBASAUR,  //tackle
-//     SPECIES_CHARMANDER, //scratch
-//     SPECIES_SQUIRTLE,   //tackle
-//     SPECIES_CATERPIE,   //tackle
-//     SPECIES_WEEDLE,     //poison sting
-//     SPECIES_PIDGEY,     //tackle
-//     SPECIES_RATTATA,    //tackle
-//     SPECIES_SPEAROW,    //peck
-//     SPECIES_EKANS,      //wrap
-//     SPECIES_PIKACHU,    //thunder shock
-//     SPECIES_SANDSHREW,  //scratch
-//     SPECIES_NIDORAN_F,  //scratch
-//     SPECIES_NIDORAN_M,  //peck
-//     SPECIES_CLEFAIRY,   //pound
-//     SPECIES_VULPIX,     //ember
-//     SPECIES_JIGGLYPUFF, //pound
-//     SPECIES_ZUBAT,      //leech life
-//     SPECIES_ODDISH,     //absorb
-//     SPECIES_PARAS,      //scratch
-//     SPECIES_VENONAT,    //tackle
-//     SPECIES_DIGLETT,    //scratch
-//     SPECIES_MEOWTH,     //scratch
-//     SPECIES_PSYDUCK,    //scratch
-//     SPECIES_MANKEY,     //scratch
-//     SPECIES_GROWLITHE,  //bite
-//     SPECIES_POLIWAG,    //bubble
-//     SPECIES_MACHOP,     //low kick
-//     SPECIES_BELLSPROUT, //vine whip
-//     SPECIES_TENTACOOL,  //poison sting
-//     SPECIES_GEODUDE,    //tackle
-//     SPECIES_PONYTA,     //tackle
-//     SPECIES_SLOWPOKE,   //tackle
-//     SPECIES_MAGNEMITE,  //tackle
-//     SPECIES_DODUO,      //peck
-//     SPECIES_SEEL,       //headbutt
-//     SPECIES_GRIMER,     //pound
-//     SPECIES_SHELLDER,   //tackle
-//     SPECIES_GASTLY,     //lick
-//     SPECIES_ONIX,       //tackle
-//     SPECIES_DROWZEE,    //pound
-//     SPECIES_KRABBY,     //bubble
-//     SPECIES_VOLTORB,    //tackle
-//     SPECIES_EXEGGCUTE,  //barrage
-//     SPECIES_CUBONE,     //bone club
-//     SPECIES_KOFFING,    //tackle
-//     SPECIES_RHYHORN,    //horn attack
-//     SPECIES_CHANSEY,    //pound
-//     SPECIES_HORSEA,     //bubble
-//     SPECIES_GOLDEEN,    //peck
-//     SPECIES_STARYU,     //tackle
-//     SPECIES_SCYTHER,    //quick attack
-//     SPECIES_EEVEE,      //tackle
-//     SPECIES_PORYGON,    //tackle
-//     SPECIES_OMANYTE,    //constrict... rlly weak attack
-//     SPECIES_KABUTO,     //scratch
-//     SPECIES_DRATINI,    //wrap
-//     SPECIES_CHIKORITA,  //tackle
-//     SPECIES_CYNDAQUIL,  //tackle
-//     SPECIES_TOTODILE,   //scratch
-//     SPECIES_SENTRET,    //scratch
-//     SPECIES_HOOTHOOT,   //tackle
-//     SPECIES_LEDYBA,     //tackle
-//     SPECIES_SPINARAK,   //poision sting
-//     SPECIES_CHINCHOU,   //bubble
-//     SPECIES_NATU,       //peck
-//     SPECIES_MAREEP,     //tackle
-//     SPECIES_MARILL,     //tackle
-//     SPECIES_SUNKERN,    //absorb
-//     SPECIES_WOOPER,     //water gun
-//     SPECIES_PINECO,     //tackle
-//     SPECIES_SNUBBULL,   //tackle
-//     SPECIES_TEDDIURSA,  //scratch
-//     SPECIES_SLUGMA,     //smog
-//     SPECIES_SWINUB,     //tackle
-//     SPECIES_REMORAID,   //water gun
-//     SPECIES_HOUNDOUR,   //ember
-//     SPECIES_PHANPY,     //tackle
-//     SPECIES_TYROGUE,    //tackle
-//     SPECIES_SMOOCHUM,   //pound
-//     SPECIES_LARVITAR,   //bite
-//     SPECIES_TREECKO,    //pound
-//     SPECIES_TORCHIC,    //scratch
-//     SPECIES_MUDKIP,     //tackle
-//     SPECIES_POOCHYENA,  //tackle
-//     SPECIES_ZIGZAGOON,  //tackle
-//     SPECIES_WURMPLE,    //tackle
-//     SPECIES_LOTAD,      //astonish
-//     SPECIES_SEEDOT,     //bide
-//     SPECIES_NINCADA,    //scratch
-//     SPECIES_TAILLOW,    //peck
-//     SPECIES_SHROOMISH,  //absorb
-//     SPECIES_WINGULL,    //water gun
-//     SPECIES_SURSKIT,    //bubble
-//     SPECIES_SKITTY,     //tackle
-//     SPECIES_BALTOY,     //confusion
-//     SPECIES_BARBOACH,   //mud slap
-//     SPECIES_CORPHISH,   //bubble
-//     SPECIES_CARVANHA,   //bite
-//     SPECIES_TRAPINCH,   //bite
-//     SPECIES_MAKUHITA,   //tackle
-//     SPECIES_ELECTRIKE,  //tackle
-//     SPECIES_NUMEL,      //tackle
-//     SPECIES_SPHEAL,     //water gun
-//     SPECIES_CACNEA,     //absorb
-//     SPECIES_SNORUNT,    //powder snow
-//     SPECIES_MEDITITE,   //bide
-//     SPECIES_SWABLU,     //peck
-//     SPECIES_DUSKULL,    //night shade
-//     SPECIES_SLAKOTH,    //scratch
-//     SPECIES_GULPIN,     //pound
-//     SPECIES_WHISMUR,    //uproar
-//     SPECIES_CLAMPERL,   //water gun
-//     SPECIES_SHUPPET,    //knock off
-//     SPECIES_ARON,       //tackle
-//     SPECIES_LILEEP,     //astonish
-//     SPECIES_ANORITH,    //scratch
-//     SPECIES_RALTS,      //confusion
-//     SPECIES_BAGON,      //bite
-//     SPECIES_BELDUM,     //take down
-// };
 
 static u16 sStarterChooseWindowId;
 

@@ -822,7 +822,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_HYPER_BEAM] =
     {
         .effect = EFFECT_RECHARGE,
-        .power = 10,
+        .power = 150,
         .type = TYPE_NORMAL,
         .accuracy = 90,
         .pp = 5,
