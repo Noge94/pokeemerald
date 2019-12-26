@@ -502,8 +502,8 @@ static const u16 sNinetalesLevelUpLearnset[] = {
 
 static const u16 sJigglypuffLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SING),
-    LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE( 9, MOVE_POUND),
+    LEVEL_UP_MOVE( 4, MOVE_POUND),
+    LEVEL_UP_MOVE( 9, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(14, MOVE_DISABLE),
     LEVEL_UP_MOVE(19, MOVE_ROLLOUT),
     LEVEL_UP_MOVE(24, MOVE_DOUBLE_SLAP),
@@ -1414,8 +1414,8 @@ static const u16 sExeggutorLevelUpLearnset[] = {
 
 static const u16 sCuboneLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
-    LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
-    LEVEL_UP_MOVE( 9, MOVE_BONE_CLUB),
+    LEVEL_UP_MOVE( 5, MOVE_BONE_CLUB),
+    LEVEL_UP_MOVE( 9, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE(13, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(17, MOVE_LEER),
     LEVEL_UP_MOVE(21, MOVE_FOCUS_ENERGY),
@@ -5320,7 +5320,7 @@ static const u16 sArmaldoLevelUpLearnset[] = {
 
 static const u16 sRaltsLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
-    LEVEL_UP_MOVE( 6, MOVE_CONFUSION),
+    LEVEL_UP_MOVE( 5, MOVE_CONFUSION),
     LEVEL_UP_MOVE(11, MOVE_DOUBLE_TEAM),
     LEVEL_UP_MOVE(16, MOVE_TELEPORT),
     LEVEL_UP_MOVE(21, MOVE_CALM_MIND),

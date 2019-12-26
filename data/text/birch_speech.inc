@@ -1,5 +1,6 @@
 gText_Noge_Welcome:: @ 82C897B
-	.string "Hey! Nice to meet you, I'm NOGE.\p"
+	.string "Hey! Nice to meet you,\n"
+	.string "I'm NOGE.\p"
 	.string "Before you start, you should\n"
 	.string "know a few things:\p"
 	.string "First, defeated POKéMON are dead.\p"

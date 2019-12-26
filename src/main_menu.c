@@ -1355,6 +1355,7 @@ static void Task_NewGameBirchSpeech_StartNogeFadeOut(u8 taskId)
     if (!RunTextPrintersAndIsPrinter0Active())
     {
         FadeOutBGM(4);
+        NewGameBirchSpeech_ClearWindow(0);
         gSprites[gTasks[taskId].tRedSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
         gTasks[taskId].tTimer = 64;

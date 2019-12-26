@@ -10118,12 +10118,15 @@ static void Cmd_handleballthrow(void)
             }
 
             // catch rate bonus for low lvl pokemon
-            catchRate += 60 - gBattleMons[gBattlerTarget].level;
-
-            if(catchRate>255)
+            if(catchRate > 255 - (60 - gBattleMons[gBattlerTarget].level))
             {
                 catchRate = 255;
             }
+            else
+            {
+                catchRate += 60 - gBattleMons[gBattlerTarget].level;
+            }
+            
         }
 
         if (gLastUsedItem > ITEM_SAFARI_BALL)
