@@ -3391,7 +3391,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
 static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     {
     .iv = 100,
-    .lvl = 16,
+    .lvl = 15,
     .species = SPECIES_MACHOP,
     .heldItem = ITEM_NONE,
     .moves = MOVE_KARATE_CHOP, MOVE_LOW_KICK, MOVE_SEISMIC_TOSS, MOVE_BULK_UP
@@ -3405,7 +3405,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     },
     {
     .iv = 200,
-    .lvl = 19,
+    .lvl = 18,
     .species = SPECIES_MAKUHITA,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = MOVE_ARM_THRUST, MOVE_VITAL_THROW, MOVE_REVERSAL, MOVE_BULK_UP
@@ -12459,3 +12459,67 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Noge2[] = {
     .species = SPECIES_EEVEE,
     }
 };
+
+static const struct TrainerMonItemDefaultMoves sParty_Shimizu[] = {
+    {
+    .iv = 100,
+    .lvl = 12,
+    .species = SPECIES_SPOINK,
+    .heldItem = ITEM_GANLON_BERRY,
+    },
+    {
+    .iv = 50,
+    .lvl = 12,
+    .species = SPECIES_ABRA,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = 50,
+    .lvl = 12,
+    .species = SPECIES_PSYDUCK,
+    .heldItem = ITEM_APICOT_BERRY,
+    },
+    {
+    .iv = 50,
+    .lvl = 12,
+    .species = SPECIES_SLOWPOKE,
+    .heldItem = ITEM_LUM_BERRY,
+    }
+};
+
+static const struct TrainerMonItemDefaultMoves sParty_Aiko[] = {
+    {
+    .iv = 100,
+    .lvl = 12,
+    .species = SPECIES_RALTS,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = 50,
+    .lvl = 14,
+    .species = SPECIES_NATU,
+    .heldItem = ITEM_ORAN_BERRY,
+    }
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_Seki[] = {
+    {
+    .iv = 100,
+    .lvl = 13,
+    .species = SPECIES_TAILLOW,
+    .moves = MOVE_PECK, MOVE_QUICK_ATTACK, MOVE_WING_ATTACK, MOVE_NONE
+    },
+    {
+    .iv = 50,
+    .lvl = 13,
+    .species = SPECIES_ZUBAT,
+    .moves = MOVE_LEECH_LIFE, MOVE_SUPERSONIC, MOVE_ASTONISH, MOVE_NONE
+    },
+    {
+    .iv = 100,
+    .lvl = 15,
+    .species = SPECIES_BEEDRILL,
+    .moves = MOVE_FURY_ATTACK, MOVE_POISON_STING, MOVE_NONE, MOVE_NONE
+    }
+};
+

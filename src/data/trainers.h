@@ -11968,5 +11968,89 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_Noge2),
         .party = {.NoItemDefaultMoves = sParty_Noge2},
     },
+
+    [TRAINER_NOGE_3] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_NOGE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_NOGE,
+        .trainerName = _("NOGE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = ARRAY_COUNT(sParty_Noge2),
+        .party = {.NoItemDefaultMoves = sParty_Noge2},
+    },
+
+    [TRAINER_NOGE_4] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_NOGE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_NOGE,
+        .trainerName = _("NOGE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = ARRAY_COUNT(sParty_Noge2),
+        .party = {.NoItemDefaultMoves = sParty_Noge2},
+    },
+
+    [TRAINER_NOGE_5] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_NOGE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_NOGE,
+        .trainerName = _("NOGE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = ARRAY_COUNT(sParty_Noge2),
+        .party = {.NoItemDefaultMoves = sParty_Noge2},
+    },
+
+    [TRAINER_SEKI] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = _("SEKI"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Seki),
+        .party = {.NoItemCustomMoves = sParty_Seki},
+    },
+
+    [TRAINER_AIKO] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_LASS,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("AIKO"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Aiko),
+        .party = {.ItemDefaultMoves = sParty_Aiko},
+    },
+
+    [TRAINER_SHIMIZU] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PSYCHIC,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = _("SHIMIZU"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Shimizu),
+        .party = {.ItemDefaultMoves = sParty_Shimizu},
+    },
     
 };

@@ -1354,6 +1354,168 @@
                     "map": "MAP_DESERT_UNDERPASS"
                 },
                 {
+                    "base_label": "gDewfordLake0",
+                    "land_mons": {
+                        "encounter_rate": 25,
+                        "mons": [
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_ABRA"
+                            },
+                            {
+                                "max_level": 9,
+                                "min_level": 9,
+                                "species": "SPECIES_ARON"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_ARON"
+                            },
+                            {
+                                "max_level": 9,
+                                "min_level": 9,
+                                "species": "SPECIES_ARON"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_CACNEA"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_GEODUDE"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_CACNEA"
+                            },
+                            {
+                                "max_level": 9,
+                                "min_level": 9,
+                                "species": "SPECIES_CACNEA"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_ABRA"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_ABRA"
+                            },
+                            {
+                                "max_level": 9,
+                                "min_level": 9,
+                                "species": "SPECIES_ABRA"
+                            },
+                            {
+                                "max_level": 10,
+                                "min_level": 10,
+                                "species": "SPECIES_GEODUDE"
+                            }
+                        ]
+                    },
+                    "map": "MAP_DEWFORD_LAKE"
+                },
+                {
+                    "base_label": "gDewfordLake1",
+                    "map": "MAP_DEWFORD_LAKE",
+                    "water_mons": {
+                        "encounter_rate": 0,
+                        "mons": [
+                            {
+                                "max_level": 11,
+                                "min_level": 8,
+                                "species": "SPECIES_POLIWAG"
+                            },
+                            {
+                                "max_level": 18,
+                                "min_level": 14,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_AZURILL"
+                            },
+                            {
+                                "max_level": 14,
+                                "min_level": 14,
+                                "species": "SPECIES_KRABBY"
+                            },
+                            {
+                                "max_level": 20,
+                                "min_level": 20,
+                                "species": "SPECIES_POLIWAG"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "base_label": "gDewfordLake2",
+                    "fishing_mons": {
+                        "encounter_rate": 0,
+                        "mons": [
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            },
+                            {
+                                "max_level": 8,
+                                "min_level": 8,
+                                "species": "SPECIES_SPHEAL"
+                            }
+                        ]
+                    },
+                    "map": "MAP_DEWFORD_LAKE"
+                },
+                {
                     "base_label": "gDewfordTown",
                     "fishing_mons": {
                         "encounter_rate": 10,

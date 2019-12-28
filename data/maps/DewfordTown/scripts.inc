@@ -5,6 +5,14 @@ DewfordTown_MapScripts:: @ 81E9507
 DewfordTown_OnTransition: @ 81E950D
 	setflag FLAG_VISITED_DEWFORD_TOWN
 	end
+DewfordTown_EventScript_GymGuard::
+	msgbox DewfordTown_Text_GymGuard, MSGBOX_NPC
+	end
+
+DewfordTown_Text_GymGuard:
+	.string "Oh, do you want to challenge BRAWLY?\p"
+	.string "He's not in the gym right now,\n"
+	.string "you can look for him in the lake.$"
 
 DewfordTown_EventScript_Briney:: @ 81E9511
 	lock

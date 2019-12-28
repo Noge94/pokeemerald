@@ -5,8 +5,14 @@ OldaleTown_House1_EventScript_Laptop:: @ 822B345
 	msgbox OldaleTown_House1_Text_Laptop, MSGBOX_YESNO
 	closemessage
 	compare VAR_RESULT, YES
-	goto_if_eq OldaleTown_House1_Text_TwitterFollow
+	goto_if_eq OldaleTown_House1_EventScript_TwitterFollow
 	releaseall
+	end
+
+
+OldaleTown_House1_EventScript_TwitterFollow:: @ 825E569
+	msgbox OldaleTown_House1_Text_TwitterFollow, MSGBOX_DEFAULT
+	release
 	end
 
 OldaleTown_House1_Text_Laptop: @ 822B6FC
@@ -17,6 +23,14 @@ OldaleTown_House1_Text_Laptop: @ 822B6FC
 
 OldaleTown_House1_Text_TwitterFollow: @ 822B6FC
 	.string "You're now following NogeSky!$"
+	
+OldaleTown_House1_EventScript_Trophy:: @ 822B345
+	msgbox OldaleTown_House1_Text_Trophy, MSGBOX_SIGN
+	end
+
+OldaleTown_House1_Text_Trophy: @ 822B6FC
+	.string "Champion of the Indigo League\n"
+	.string "          Year 2000          $"
 	
 OldaleTown_House1_EventScript_Box:: @ 822B345
 	msgbox OldaleTown_House1_Text_Box, MSGBOX_SIGN
@@ -45,7 +59,8 @@ OldaleToun_House1_EventScript_GameCube:: @ 81F865F
 	end
 	
 OldaleToun_House1_Text_ItsAGameCube: @ 81F884F
-	.string "It's a Nintendo GameCube.$"
+	.string "It may look like a Nintendo GameCube,\n"
+	.string "but it is actually a Nintendo Switch.$"
 
 
 OldaleTown_House1_EventScript_ItemUltraball:: @ 8290D26

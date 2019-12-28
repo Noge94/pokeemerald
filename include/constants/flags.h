@@ -1343,7 +1343,7 @@
 #define FLAG_TRAINER_FLAG_START                                     0x500
 #define TRAINERS_FLAG_NO                                            0x356
 
-#define SYSTEM_FLAGS   (FLAG_TRAINER_FLAG_START + TRAINERS_FLAG_NO + 0xA) // 0x860
+#define SYSTEM_FLAGS                                                0x860 // (FLAG_TRAINER_FLAG_START + TRAINERS_FLAG_NO + 0xA)
 
 // System Flags
 

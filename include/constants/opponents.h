@@ -856,7 +856,16 @@
 #define TRAINER_LEAF                        852
 #define TRAINER_NOGE_1                      853
 #define TRAINER_NOGE_2                      854
+#define TRAINER_NOGE_3                      855
+#define TRAINER_NOGE_4                      856
+#define TRAINER_NOGE_5                      857
+#define TRAINER_SEKI                        858
+#define TRAINER_AIKO                        859
+#define TRAINER_SHIMIZU                     860
+#define TRAINER_UNUSEDD1                    861
+#define TRAINER_UNUSEDD2                    862
+#define TRAINER_UNUSEDD3                    863
 
-#define TRAINERS_COUNT                      855
+#define TRAINERS_COUNT                      864 // 865th opponent would override a system flag (index 864) 
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

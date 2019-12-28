@@ -201,7 +201,6 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay:: @ 8212600
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor: @ 8212609
 	.string "I'm MR. STONE, the PRESIDENT of\n"
 	.string "the DEVON CORPORATION.\p"
-	.string "I'd just got word about you!\p"
 	.string "You saved our staff not just once,\n"
 	.string "but twice!\p"
 	.string "I have a favor to ask of an amazing\n"
