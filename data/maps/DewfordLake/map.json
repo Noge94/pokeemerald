@@ -60,13 +60,13 @@
             "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
             "script": "DewfordLake_EventScript_Seki",
             "trainer_sight_or_berry_tree_id": "5",
-            "trainer_type": "0",
+            "trainer_type": "1",
             "x": 8,
             "y": 17
         },
         {
             "elevation": 3,
-            "flag": "0",
+            "flag": "FLAG_MET_BRAWLY_AT_LAKE",
             "graphics_id": "EVENT_OBJ_GFX_BRAWLY",
             "movement_range_x": 0,
             "movement_range_y": 0,

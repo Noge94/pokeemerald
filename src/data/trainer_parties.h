@@ -3391,7 +3391,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
 static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     {
     .iv = 100,
-    .lvl = 15,
+    .lvl = 16,
     .species = SPECIES_MACHOP,
     .heldItem = ITEM_NONE,
     .moves = MOVE_KARATE_CHOP, MOVE_LOW_KICK, MOVE_SEISMIC_TOSS, MOVE_BULK_UP
@@ -12462,16 +12462,10 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Noge2[] = {
 
 static const struct TrainerMonItemDefaultMoves sParty_Shimizu[] = {
     {
-    .iv = 100,
+    .iv = 0,
     .lvl = 12,
     .species = SPECIES_SPOINK,
     .heldItem = ITEM_GANLON_BERRY,
-    },
-    {
-    .iv = 50,
-    .lvl = 12,
-    .species = SPECIES_ABRA,
-    .heldItem = ITEM_NONE,
     },
     {
     .iv = 50,
@@ -12480,8 +12474,14 @@ static const struct TrainerMonItemDefaultMoves sParty_Shimizu[] = {
     .heldItem = ITEM_APICOT_BERRY,
     },
     {
-    .iv = 50,
-    .lvl = 12,
+    .iv = 100,
+    .lvl = 13,
+    .species = SPECIES_ABRA,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = 100,
+    .lvl = 13,
     .species = SPECIES_SLOWPOKE,
     .heldItem = ITEM_LUM_BERRY,
     }
@@ -12489,14 +12489,14 @@ static const struct TrainerMonItemDefaultMoves sParty_Shimizu[] = {
 
 static const struct TrainerMonItemDefaultMoves sParty_Aiko[] = {
     {
-    .iv = 100,
+    .iv = 0,
     .lvl = 12,
     .species = SPECIES_RALTS,
     .heldItem = ITEM_NONE,
     },
     {
-    .iv = 50,
-    .lvl = 14,
+    .iv = 100,
+    .lvl = 16,
     .species = SPECIES_NATU,
     .heldItem = ITEM_ORAN_BERRY,
     }
@@ -12504,19 +12504,19 @@ static const struct TrainerMonItemDefaultMoves sParty_Aiko[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_Seki[] = {
     {
-    .iv = 100,
+    .iv = 50,
+    .lvl = 12,
+    .species = SPECIES_ZUBAT,
+    .moves = MOVE_LEECH_LIFE, MOVE_SUPERSONIC, MOVE_ASTONISH, MOVE_NONE
+    },
+    {
+    .iv = 0,
     .lvl = 13,
     .species = SPECIES_TAILLOW,
     .moves = MOVE_PECK, MOVE_QUICK_ATTACK, MOVE_WING_ATTACK, MOVE_NONE
     },
     {
     .iv = 50,
-    .lvl = 13,
-    .species = SPECIES_ZUBAT,
-    .moves = MOVE_LEECH_LIFE, MOVE_SUPERSONIC, MOVE_ASTONISH, MOVE_NONE
-    },
-    {
-    .iv = 100,
     .lvl = 15,
     .species = SPECIES_BEEDRILL,
     .moves = MOVE_FURY_ATTACK, MOVE_POISON_STING, MOVE_NONE, MOVE_NONE

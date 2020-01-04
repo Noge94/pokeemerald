@@ -1359,32 +1359,32 @@
                         "encounter_rate": 25,
                         "mons": [
                             {
-                                "max_level": 8,
+                                "max_level": 10,
                                 "min_level": 8,
                                 "species": "SPECIES_ABRA"
                             },
                             {
-                                "max_level": 9,
+                                "max_level": 10,
                                 "min_level": 9,
                                 "species": "SPECIES_ARON"
                             },
                             {
-                                "max_level": 8,
+                                "max_level": 10,
                                 "min_level": 8,
                                 "species": "SPECIES_ARON"
                             },
                             {
-                                "max_level": 9,
+                                "max_level": 10,
                                 "min_level": 9,
                                 "species": "SPECIES_ARON"
                             },
                             {
-                                "max_level": 8,
+                                "max_level": 10,
                                 "min_level": 8,
                                 "species": "SPECIES_CACNEA"
                             },
                             {
-                                "max_level": 8,
+                                "max_level": 11,
                                 "min_level": 8,
                                 "species": "SPECIES_GEODUDE"
                             },

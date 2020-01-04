@@ -40,7 +40,7 @@
 #define FLAG_NOGEHOUSE_ITEM1    0x20 
 #define FLAG_OLDALE_HIDDEN_POTION    0x21 
 #define FLAG_DEFEATED_NOGE_ROUTE_104    0x22 
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_MET_BRAWLY_AT_LAKE    0x23
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag

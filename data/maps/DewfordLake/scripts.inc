@@ -2,11 +2,24 @@ DewfordLake_MapScripts::
 	.byte 0
 
 DewfordLake_EventScript_Brawly:: @ 81FC8B7
-	msgbox DewfordLake_Text_Brawly, MSGBOX_AUTOCLOSE
+	msgbox DewfordLake_Text_Brawly, MSGBOX_NPC
+	fadescreen 1
+	removeobject 4
+	setflag FLAG_MET_BRAWLY_AT_LAKE
+	delay 30
+	fadescreen 0
 	end
 
 DewfordLake_Text_Brawly: @ 81FCB9F
-	.string "My name is BRAWLY$"
+	.string "Oh,\l"
+	.string "you came to challenge the gym leader?\p"
+	.string "Nice to meet you,\n"
+	.string "My name is BRAWLY.\p"
+	.string "I usually come to the\n"
+	.string "lake to focus my mind.\p"
+	.string "I will go to the gym right now and\n"
+	.string "get everything ready for our match,\l"
+	.string "sorry to keep you wating!$"
 
 DewfordLake_EventScript_Seki:: @ 81FC8B7
 	trainerbattle_single TRAINER_SEKI, DewfordLake_Text_SekiPreBattle, DewfordLake_Text_SekiDefeat
@@ -25,9 +38,9 @@ DewfordLake_Text_SekiDefeat: @ 81FCBB8
 	.string "about the most useless things.$"
 
 DewfordLake_Text_SekiPostBattle: @ 81FCBCA
-	.string "Dewford is so small.\n"
+	.string "Dewford is so small...\n"
 	.string "Here, every day is the same.\p"
-	.string "Some days I just want to move far away\p"
+	.string "Some days I just want to move far away\n"
 	.string "and start all over again from scratch.$"
 
 DewfordLake_EventScript_Aiko:: @ 81FC8B7
@@ -36,7 +49,7 @@ DewfordLake_EventScript_Aiko:: @ 81FC8B7
 	end
 
 DewfordLake_Text_AikoPreBattle: @ 81FCB9F
-	.string "Say, if we see shooting stars...\n"
+	.string "Say, if we saw shooting stars...\n"
 	.string "What would you wish for?$"
 
 DewfordLake_Text_AikoDefeat: @ 81FCBB8
