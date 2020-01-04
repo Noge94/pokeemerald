@@ -3371,6 +3371,8 @@ static void Cmd_getexp(void)
                         i = STRINGID_EMPTYSTRING4;
                     }
                     
+                    //bonus exp because the game is hard
+                    gBattleMoveDamage = (gBattleMoveDamage * 110) / 100;
 
                     // get exp getter battlerId
                     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
