@@ -5262,6 +5262,12 @@ static void TryEvolvePokemon(void)
                 gLeveledUpInBattle = levelUpBits;
 
                 species = GetEvolutionTargetSpecies(&gPlayerParty[i], 0, levelUpBits);
+
+                if (species == SPECIES_NONE && gBattleResults.playerFaintCounter > 0)
+                {
+                    species = GetEvolutionTargetSpecies(&gPlayerParty[i], 4, levelUpBits);
+                }
+
                 if (species != SPECIES_NONE)
                 {
                     FreeAllWindowBuffers();

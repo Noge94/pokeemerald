@@ -113,6 +113,7 @@ Route104_EventScript_NogeMovementDown:
 	emote_exclamation_mark
 	delay_16
 	delay_16
+	delay_16
 	walk_down
 	step_end
 

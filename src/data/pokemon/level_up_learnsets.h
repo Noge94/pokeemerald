@@ -3405,10 +3405,10 @@ static const u16 sTyranitarLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const u16 sLugiaLevelUpLearnset[] = {
+static const u16 sLugiaLevelUpLearnset[] = {//peck
     LEVEL_UP_MOVE( 1, MOVE_WHIRLWIND),
-    LEVEL_UP_MOVE(11, MOVE_SAFEGUARD),
-    LEVEL_UP_MOVE(22, MOVE_GUST),
+    LEVEL_UP_MOVE(11, MOVE_GUST),
+    LEVEL_UP_MOVE(22, MOVE_SAFEGUARD),
     LEVEL_UP_MOVE(33, MOVE_RECOVER),
     LEVEL_UP_MOVE(44, MOVE_HYDRO_PUMP),
     LEVEL_UP_MOVE(55, MOVE_RAIN_DANCE),
@@ -3419,10 +3419,10 @@ static const u16 sLugiaLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const u16 sHoOhLevelUpLearnset[] = {
+static const u16 sHoOhLevelUpLearnset[] = {//scratch
     LEVEL_UP_MOVE( 1, MOVE_WHIRLWIND),
-    LEVEL_UP_MOVE(11, MOVE_SAFEGUARD),
-    LEVEL_UP_MOVE(22, MOVE_GUST),
+    LEVEL_UP_MOVE(11, MOVE_GUST),
+    LEVEL_UP_MOVE(22, MOVE_SAFEGUARD),
     LEVEL_UP_MOVE(33, MOVE_RECOVER),
     LEVEL_UP_MOVE(44, MOVE_FIRE_BLAST),
     LEVEL_UP_MOVE(55, MOVE_SUNNY_DAY),
@@ -5042,9 +5042,10 @@ static const u16 sExploudLevelUpLearnset[] = {
 
 static const u16 sClamperlLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_CLAMP),
-    LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE( 1, MOVE_WHIRLPOOL),
-    LEVEL_UP_MOVE( 1, MOVE_IRON_DEFENSE),
+    LEVEL_UP_MOVE( 6, MOVE_IRON_DEFENSE),
+    LEVEL_UP_MOVE( 10, MOVE_WATER_GUN),
+    LEVEL_UP_MOVE( 16, MOVE_WHIRLPOOL),
+    LEVEL_UP_MOVE(23, MOVE_WATER_PULSE),
     LEVEL_UP_END
 };
 

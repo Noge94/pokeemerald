@@ -273,6 +273,8 @@
 #define EVO_LEVEL_NINJASK    0x000d // Pokémon reaches the specified level (special value for Ninjask)
 #define EVO_LEVEL_SHEDINJA   0x000e // Pokémon reaches the specified level (special value for Shedinja)
 #define EVO_BEAUTY           0x000f // Pokémon levels up with beauty ≥ specified value
+#define EVO_REVENGE          0x0010 // Pokémon levels up when an allied pokémon died
+#define EVO_SURVIVOR         0x0011 // Pokémon levels up with lower than 10% health
 
 #define EVOS_PER_MON 5
 

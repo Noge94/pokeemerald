@@ -282,8 +282,6 @@ OldaleTown_EventScript_RivalFinish:: @ 81E911A
 	call_if_eq OldaleTown_EventScript_DoExitMovement1
 	compare VAR_0x8009, 1
 	call_if_eq OldaleTown_EventScript_DoExitMovement2
-	applymovement 4, OldaleTown_Movement_RivalExit
-	waitmovement 0
 	removeobject 4
 	setvar VAR_OLDALE_RIVAL_STATE, 2
 	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
@@ -325,8 +323,8 @@ OldaleTown_Movement_RivalExit: @ 81E9177
 	walk_down
 	step_end
 
-@delay_8 @ delete this to reduce wait?
 OldaleTown_Movement_WatchRivalExit: @ 81E917E
+	delay_8
 	delay_4  
 	walk_in_place_fastest_down
 	step_end

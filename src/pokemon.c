@@ -5439,6 +5439,17 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (gEvolutionTable[species][i].param <= beauty)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_SURVIVOR:
+                if (GetMonData(mon, MON_DATA_HP, 0)*5 <= GetMonData(mon, MON_DATA_MAX_HP, 0) 
+                    && gEvolutionTable[species][i].param <= level)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_TRADE_ITEM:
+                if (gEvolutionTable[species][i].param == heldItem)
+                {
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                }
+                break;
             }
         }
         break;
@@ -5470,6 +5481,15 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
             {
                 targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            }
+        }
+        break;
+    case 4:
+        for (i = 0; i < EVOS_PER_MON; i++)
+        {
+            if (gEvolutionTable[species][i].method == EVO_REVENGE)
+            {
+                targetSpecies = gEvolutionTable[species][i].targetSpecies;
             }
         }
         break;

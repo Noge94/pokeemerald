@@ -89,6 +89,7 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom:: @ 8271A19
     message gText_WeHopeToSeeYouAgain
     return
 
+
 EventScript_PkmnCenterNurse_CheckPokerus:: @ 8271A43
     specialvar VAR_RESULT, IsPokerusInParty
     compare VAR_RESULT, TRUE
